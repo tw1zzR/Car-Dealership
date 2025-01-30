@@ -14,7 +14,7 @@ class Dealership:
             ]
 
     def __init__(self):
-        print("Initializing Dealership")
+        self.dealership_name = "9LPUK-XY9LPUK"
 
 
     def find_mark(self, brand):
@@ -70,37 +70,5 @@ class Dealership:
             if model == car.model.split()[0]:
                 print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                 print(f"Fuel capacity: {car.fuel_capacity}")
+                # Other stats
                 car.check_drive()
-                # if car.all_wheels:
-                #     print(f"Complete-Drive: {car.all_wheels}")
-                # elif car.front_wheel and not car.rear_wheel:
-                #     print(f"Front-Drive: {car.front_wheel}")
-                # elif car.rear_wheel and not car.front_wheel:
-                #     print(f"Rear-Drive: {car.rear_wheel}")
-
-
-
-
-
-
-
-
-    def car_maker(self):
-        print(f"Car make: {self.make}")
-
-    def car_model(self):
-        print(f"Model: {self.model}")
-
-    def car_year(self):
-        print(f"Year: {self.year}")
-
-    def car_fuel(self):
-        print(f"Fuel capacity: {self.fuel_capacity}")
-
-    def drive(self):
-        if self.all_wheels:
-            print(f"Complete-Drive: {self.all_wheels}")
-        elif self.front_wheel and not self.rear_wheel:
-            print(f"Front-Drive: {self.front_wheel}")
-        elif self.rear_wheel and not self.front_wheel:
-            print(f"Rear-Drive: {self.rear_wheel}")
