@@ -36,6 +36,9 @@ while True:
                     print()
                     dealership.find_model(option)
                     print()
+                case "4":
+                    dealership.stock_cars()
+                    print()
                 case _:
                     print(invalid_option)
     elif selection == "2":

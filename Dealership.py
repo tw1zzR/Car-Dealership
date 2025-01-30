@@ -1,4 +1,5 @@
 from Cars import *
+from variables import border
 
 class Dealership:
 
@@ -72,3 +73,13 @@ class Dealership:
                 print(f"Fuel capacity: {car.fuel_capacity}")
                 # Other stats
                 car.check_drive()
+
+    def stock_cars(self):
+        for car in self.cars:
+            print(border)
+            print(f"{car.make} {car.model} {car.year}")
+            print(f"Fuel capacity: {car.fuel_capacity}")
+            # Other stats
+            car.check_drive()
+            print(f"Cost: {car.cost}$")
+

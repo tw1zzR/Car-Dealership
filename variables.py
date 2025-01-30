@@ -1,4 +1,5 @@
 
+border = "----------------------------------"
 dealership_border = "----------CAR-DEALERSHIP----------"
 
 invalid_option = "Invalid variation, please select between options."
