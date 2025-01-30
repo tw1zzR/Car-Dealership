@@ -30,7 +30,6 @@ class CarInfo:
             print(f"Rear-Drive: {self.rear_wheel}")
 
 
-
 class Crossover(CarInfo):
     type = "Crossover"
 

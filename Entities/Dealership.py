@@ -1,4 +1,4 @@
-from Cars import *
+from Entities.Cars import *
 from variables import border
 
 class Dealership:
