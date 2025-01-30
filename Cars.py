@@ -21,6 +21,14 @@ class CarInfo:
         else:
             self.all_wheels = False
 
+    def check_drive(self):
+        if self.all_wheels:
+            print(f"Complete-Drive: {self.all_wheels}")
+        elif self.front_wheel and not self.rear_wheel:
+            print(f"Front-Drive: {self.front_wheel}")
+        elif self.rear_wheel and not self.front_wheel:
+            print(f"Rear-Drive: {self.rear_wheel}")
+
 
 
 class Crossover(CarInfo):

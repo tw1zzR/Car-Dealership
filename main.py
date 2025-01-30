@@ -31,6 +31,11 @@ while True:
                     print()
                     dealership.find_type(option)
                     print()
+                case "3":
+                    option = input("What model are you looking for?").upper()
+                    print()
+                    dealership.find_model(option)
+                    print()
                 case _:
                     print(invalid_option)
     elif selection == "2":
