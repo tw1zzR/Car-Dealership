@@ -1,5 +1,5 @@
 
 def GoodByeClient():
-    print("Have a nice day! Good bye!")
+    print("\nHave a nice day! Good bye!")
     exit()
 

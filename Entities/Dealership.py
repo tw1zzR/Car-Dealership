@@ -65,16 +65,20 @@ class Dealership:
 
 
     def find_model(self, model):
+        found = False
+
         for car in self.cars:
             if model == car.model.split()[0]:
-                print(f"\n{border}")
+                print(border)
                 print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                 print(f"Fuel capacity: {car.fuel_capacity}")
                 # Other stats
                 car.check_drive()
-                print(f"{border}\n")
-            else:
-                print(f"{model} is not in stock.")
+                print(border)
+                found = True
+
+        if not found:
+            print(f"\n{model} is not in stock.\n")
 
 
     def stock_cars(self):
@@ -98,7 +102,7 @@ class Dealership:
             case "2": # Low to High
                 self.cars.sort(reverse=True, key=cost_key)
             case _:
-                print(f"\n{invalid_option}\n")
+                print(invalid_option)
                 return
 
         for car in self.cars:

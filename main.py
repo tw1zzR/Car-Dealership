@@ -11,7 +11,6 @@ try:
 
     while True:
         selection = input(options).upper()
-        print()
 
         if selection == "Q":
             GoodByeClient()
@@ -19,9 +18,9 @@ try:
         if selection == "1":
 
             while True:
-                selection = input("What are you interested in?\n"
+                selection = input("\nWhat are you interested in?\n"
                                   " [q to quit]  [b to back]\n"
-                                  "↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓\n"
+                                  "   ↓   ↓   ↓  ↓   ↓   ↓   \n"
                                   " 1. Choose mark\n"
                                   " 2. Choose type \n"
                                   " 3. Find a model\n"
@@ -37,38 +36,71 @@ try:
                         break
                     case "1":
                         i = 1
-                        print("\nAvailable marks:")
+
+                        print("\nAvailable marks:\n"
+                              " [q to quit]  [b to back]")
                         for car in CarInfo.brands:
                             print(f"{i}. {car}")
                             i += 1
                         option = input("Select mark: ").upper()
-                        print()
-                        dealership.find_mark(option)
-                        print()
+
+                        if option == "Q":
+                            GoodByeClient()
+                        elif option == "B":
+                            break
+                        elif option == "1" or option == "2" or option == "3":
+                            print()
+                            dealership.find_mark(option)
+                            print()
+                        else:
+                            print(invalid_option)
+
                     case "2":
                         option = input(f"\nChoose type of car:\n"
+                                       "[q to quit]  [b to back]\n"
                                        f" 1. Crossovers\n"
                                        f" 2. Sportcars\n"
                                        f" 3. Pickups\n"
                                        f"Select type: ").upper()
-                        print()
-                        dealership.find_type(option)
-                        print()
+                        if option == "Q":
+                            GoodByeClient()
+                        elif option == "B":
+                            break
+                        elif option == "1" or option == "2" or option == "3":
+                            print()
+                            dealership.find_type(option)
+                            print()
+                        else:
+                            print(invalid_option)
                     case "3":
-                        option = input("\nWhat model are you looking for? ").upper()
-
-                        dealership.find_model(option)
+                        option = input("\nWhat model are you looking for?\n"
+                                       "   [q to quit]  [b to back]      \n"
+                                       "Enter a car model: ").upper()
+                        if option == "Q":
+                            GoodByeClient()
+                        elif option == "B":
+                            break
+                        else:
+                            dealership.find_model(option)
 
                     case "4":
                         print()
                         dealership.stock_cars()
-                        print(f"{border}\n")
+                        print(f"{border}")
                     case "5":
-                        option = input("\nHow you want to sort?\n 1. Low to High ↑\n 2. High to Low ↓\nSelect option: ").upper()
-                        if option == "1" or option == "2":
-                            print(f"\n{border}")
+                        option = input("\nHow you want to sort?\n"
+                                       "[q to quit]  [b to back]\n"
+                                       " 1. Low to High ↑\n"
+                                       " 2. High to Low ↓\n"
+                                       "Select option: ").upper()
+                        if option == "Q":
+                            GoodByeClient()
+                        elif option == "B":
+                            break
+                        elif option == "1" or option == "2":
+                            print(border)
                             dealership.sort_price(option)
-                            print(f"{border}\n")
+                            print(border)
                         else:
                             dealership.sort_price(option)
                     case "6":
@@ -79,6 +111,10 @@ try:
                                        " 3. Pickups\n"
                                        "Select: ").upper()
                         match option:
+                            case "Q":
+                                GoodByeClient()
+                            case "B":
+                                break
                             case "1":
                                 print(crossover_benefits)
                             case "2":
@@ -86,12 +122,12 @@ try:
                             case "3":
                                 print(pickup_benefits)
                             case _:
-                                print(f"\n{invalid_option}\n")
+                                print(invalid_option)
 
                     case _:
-                        print(f"\n{invalid_option}\n")
+                        print(invalid_option)
         elif selection == "2":
-            print(f"Dealership works at: {work_time}\n")
+            print(f"\nDealership works at: {work_time}")
         elif selection == "3":
             print(about_us)
         else:
