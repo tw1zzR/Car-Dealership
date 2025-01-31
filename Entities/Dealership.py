@@ -21,59 +21,61 @@ class Dealership:
 
     def find_mark(self, brand):
 
-        # BMW
-        if brand == "BMW" or brand == "1":
-            for car in self.cars:
-                if car.make.startswith("B"):
-                    print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-        # Audi
-        elif brand == "AUDI" or brand == "2":
-            for car in self.cars:
-                if car.make.startswith("A"):
-                    print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-        # Honda
-        elif brand == "HONDA" or brand == "3":
-            for car in self.cars:
-                if car.make.startswith("H"):
-                    print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-        else:
-            print(f"{brand} is not in stock.")
+        match brand:
+            case "1": # BMW
+                for car in self.cars:
+                    if car.make == "BMW":
+                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
+            case "2": # AUDI
+                for car in self.cars:
+                    if car.make == "AUDI":
+                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
+            case "3": # HONDA
+                for car in self.cars:
+                    if car.make == "HONDA":
+                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
+            case _:
+                print(f"{brand} is not in stock.")
 
 
     def find_type(self, type):
         quantity = 0
 
-        # Crossovers
-        if type.startswith("C") or type == "1":
-            for car in self.cars:
-                if isinstance(car, Crossover):
-                    print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-                    quantity += 1
-            print(f"\nAvailable {quantity} crossovers. Which one interests you?\n")
-        # Sportcars
-        elif type.startswith("S") or type == "2":
-            for car in self.cars:
-                if isinstance(car, Sportcar):
-                    print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-                    quantity += 1
-            print(f"\nAvailable {quantity} sportcars. Which one interests you?\n")
-        # Pickups
-        elif type.startswith("P") or type == "3":
-            for car in self.cars:
-                if isinstance(car, Pickup):
-                    print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-                    quantity += 1
-            print(f"\nAvailable {quantity} pickups. Which one interests you?\n")
-        else:
-            print(f"{type} is not in stock.")
+        match type:
+            case "1": # Crossovers
+                for car in self.cars:
+                    if isinstance(car, Crossover):
+                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
+                        quantity += 1
+                print(f"\nAvailable {quantity} crossovers. Which one interests you?\n")
+            case "2": # Sportcars
+                for car in self.cars:
+                    if isinstance(car, Sportcar):
+                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
+                        quantity += 1
+                print(f"\nAvailable {quantity} sportcars. Which one interests you?\n")
+            case "3": # Pickups
+                for car in self.cars:
+                    if isinstance(car, Pickup):
+                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
+                        quantity += 1
+                print(f"\nAvailable {quantity} pickups. Which one interests you?\n")
+            case _:
+                print(f"{type} is not in stock.")
+
 
     def find_model(self, model):
         for car in self.cars:
             if model == car.model.split()[0]:
+                print(f"\n{border}")
                 print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                 print(f"Fuel capacity: {car.fuel_capacity}")
                 # Other stats
                 car.check_drive()
+                print(f"{border}\n")
+            else:
+                print(f"{model} is not in stock.")
+
 
     def stock_cars(self):
         for car in self.cars:
@@ -84,18 +86,20 @@ class Dealership:
             car.check_drive()
             print(f"Cost: {car.cost}$")
 
+
     def sort_price(self, price):
 
         def cost_key(e):
             return e.cost
 
         match price:
-            case "1":
+            case "1": # High to Low
                 self.cars.sort(key=cost_key)
-            case "2":
+            case "2": # Low to High
                 self.cars.sort(reverse=True, key=cost_key)
             case _:
-                print(invalid_option)
+                print(f"\n{invalid_option}\n")
                 return
+
         for car in self.cars:
             print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
