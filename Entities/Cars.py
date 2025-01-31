@@ -29,6 +29,14 @@ class CarInfo:
         elif self.rear_wheel and not self.front_wheel:
             print(f"Rear-Drive: {self.rear_wheel}")
 
+    def display_info(self):
+        print(f"Car: {self.make} {self.model}")
+        print(f"Year: {self.year}")
+        print(f"Type: {self.type}")
+        print(f"Fuel capacity: {self.fuel_capacity}")
+        CarInfo.check_drive(self)
+        print(f"Cost: {self.cost}$")
+
 
 class Crossover(CarInfo):
     type = "Crossover"

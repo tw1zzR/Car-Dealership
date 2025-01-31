@@ -74,11 +74,11 @@ class Dealership:
                 print(f"Fuel capacity: {car.fuel_capacity}")
                 # Other stats
                 car.check_drive()
-                print(border)
+                print("----------------------------------")
                 found = True
 
         if not found:
-            print(f"\n{model} is not in stock.\n")
+            print(f"\n{model} is not in stock.")
 
 
     def stock_cars(self):
