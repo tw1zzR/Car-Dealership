@@ -1,5 +1,6 @@
 from Entities.Cars import *
-from variables import border
+from variables import border, invalid_option
+
 
 class Dealership:
 
@@ -83,3 +84,18 @@ class Dealership:
             car.check_drive()
             print(f"Cost: {car.cost}$")
 
+    def sort_price(self, price):
+
+        def cost_key(e):
+            return e.cost
+
+        match price:
+            case "1":
+                self.cars.sort(key=cost_key)
+            case "2":
+                self.cars.sort(reverse=True, key=cost_key)
+            case _:
+                print(invalid_option)
+                return
+        for car in self.cars:
+            print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
