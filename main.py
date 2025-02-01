@@ -314,6 +314,8 @@ try:
                                                         break
                                                     else:
                                                         print(invalid_option)
+                                        if not found:
+                                            print(invalid_option)
                             else:
                                 print(invalid_option)
 
