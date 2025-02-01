@@ -118,34 +118,41 @@ try:
 
                                     found = False
                                     model_option = input("\nWhich one interests you?\n"
+                                                         "  [q to quit]  [b to back]\n]"
                                                          "Enter a model: ").upper()
 
-                                    for car in dealership.cars:
-                                        if model_option == car.model:
-                                            found = True
-                                            while True:
-                                                print(f"\n{border}")
-                                                car.display_info()
-                                                print(f"{border}")
+                                    if model_option == "Q":
+                                        GoodByeClient()
+                                    if model_option == "B":
+                                        break
+                                    else:
 
-                                                buy_option = input("\nDo you want to buy this auto? (y/n)\n"
-                                                                   "      [q to quit]  [b to back]       \n"
-                                                                   "Enter your choice: ").upper()
+                                        for car in dealership.cars:
+                                            if model_option == car.model:
+                                                found = True
+                                                while True:
+                                                    print(f"\n{border}")
+                                                    car.display_info()
+                                                    print(f"{border}")
 
-                                                if buy_option == "Q":
-                                                    GoodByeClient()
-                                                elif buy_option == "B":
-                                                    break
-                                                elif buy_option == "Y":
-                                                    print(
-                                                        f"\nCongratulations! You have purchased a car {car.make} {car.model} {car.year}. Deal amount - {car.cost}$")
-                                                    GoodByeClient()
-                                                elif buy_option == "N":
-                                                    break
-                                                else:
-                                                    print(invalid_option)
-                                    if not found:
-                                        print(invalid_option)
+                                                    buy_option = input("\nDo you want to buy this auto? (y/n)\n"
+                                                                       "      [q to quit]  [b to back]       \n"
+                                                                       "Enter your choice: ").upper()
+
+                                                    if buy_option == "Q":
+                                                        GoodByeClient()
+                                                    elif buy_option == "B":
+                                                        break
+                                                    elif buy_option == "Y":
+                                                        print(
+                                                            f"\nCongratulations! You have purchased a car {car.make} {car.model} {car.year}. Deal amount - {car.cost}$")
+                                                        GoodByeClient()
+                                                    elif buy_option == "N":
+                                                        break
+                                                    else:
+                                                        print(invalid_option)
+                                        if not found:
+                                            print(invalid_option)
 
                             else:
                                 print(invalid_option)
@@ -212,9 +219,48 @@ try:
                                     print(f"\n{option} not found in the list of available vehicles.")
 
                     case "4":
-                        print()
-                        dealership.stock_cars()
-                        print(f"{border}")
+
+                        while True:
+                            print()
+                            dealership.stock_cars()
+                            print(f"{border}")
+
+                            model_option = input("\nWhich one interests you?\n"
+                                                 "  [q to quit]  [b to back]\n"
+                                                 "Enter a model: ").upper()
+                            if model_option == "Q":
+                                GoodByeClient()
+                            elif model_option == "B":
+                                break
+                            else:
+                                found = False
+                                for car in dealership.cars:
+                                    if model_option == car.model:
+                                        while True:
+                                            print(f"\n{border}")
+                                            car.display_info()
+                                            print(border)
+
+                                            found = True
+
+
+                                            buy_option = input("\nDo you want to buy this auto? (y/n)\n"
+                                                               "      [q to quit]  [b to back]       \n"
+                                                               "Enter your choice: ").upper()
+
+                                            if buy_option == "Q":
+                                                GoodByeClient()
+                                            elif buy_option == "B":
+                                                break
+                                            elif buy_option == "Y":
+                                                print(
+                                                    f"\nCongratulations! You have purchased a car {car.make} {car.model} {car.year}. Deal amount - {car.cost}$")
+                                                GoodByeClient()
+                                            elif buy_option == "N":
+                                                break
+                                            else:
+                                                print(invalid_option)
+
                     case "5":
 
                         while True:
