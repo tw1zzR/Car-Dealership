@@ -99,9 +99,6 @@ class Dealership:
                 self.cars.sort(key=cost_key)
             case "2": # Low to High
                 self.cars.sort(reverse=True, key=cost_key)
-            case _:
-                print(invalid_option)
-                return
 
         for car in self.cars:
             print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
