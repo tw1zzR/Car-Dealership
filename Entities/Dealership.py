@@ -47,19 +47,19 @@ class Dealership:
                     if isinstance(car, Crossover):
                         print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                         quantity += 1
-                print(f"\nAvailable {quantity} crossovers. Which one interests you?\n")
+                print(f"\nAvailable {quantity} crossovers.")
             case "2": # Sportcars
                 for car in self.cars:
                     if isinstance(car, Sportcar):
                         print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                         quantity += 1
-                print(f"\nAvailable {quantity} sportcars. Which one interests you?\n")
+                print(f"\nAvailable {quantity} sportcars.")
             case "3": # Pickups
                 for car in self.cars:
                     if isinstance(car, Pickup):
                         print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                         quantity += 1
-                print(f"\nAvailable {quantity} pickups. Which one interests you?\n")
+                print(f"\nAvailable {quantity} pickups.")
             case _:
                 print(f"{type} is not in stock.")
 
@@ -69,16 +69,14 @@ class Dealership:
 
         for car in self.cars:
             if model == car.model.split()[0]:
-                print(border)
                 print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                 print(f"Fuel capacity: {car.fuel_capacity}")
                 # Other stats
                 car.check_drive()
-                print("----------------------------------")
                 found = True
 
         if not found:
-            print(f"\n{model} is not in stock.")
+            print(f"{model} is not in stock.")
 
 
     def stock_cars(self):

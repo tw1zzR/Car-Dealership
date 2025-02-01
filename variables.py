@@ -1,5 +1,5 @@
 
-border = "\n----------------------------------"
+border = "----------------------------------"
 dealership_border = "----------CAR-DEALERSHIP----------"
 
 invalid_option = "\nInvalid variation, please select between options."
@@ -10,26 +10,26 @@ options = ("\nWhat do you want? [q to quit]\n"
            " 3. About us\n"
            "Select your option: ")
 
-crossover_benefits = (f"{border}\n"
+crossover_benefits = (f"\n{border}\n"
                       "🚙 SUV (Crossover):\n"
                       "✅ Spacious interior & cargo room\n"
                       "✅ Higher driving position\n"
                       "✅ Good for off-road & all-weather"
-                      f"{border}")
+                      f"\n{border}")
 
-sportcar_benefits = (f"{border}\n"
+sportcar_benefits = (f"\n{border}\n"
                      "🏎️ Sports Car:\n"
                      "✅ High speed & acceleration\n"
                      "✅ Sleek, stylish design\n"
                      "✅ Superior handling & performance"
-                     f"{border}")
+                     f"\n{border}")
 
-pickup_benefits = (f"{border}\n"
+pickup_benefits = (f"\n{border}\n"
                    "🛻 Pickup Truck:\n"
                    "✅ Strong towing & hauling power\n"
                    "✅ Durable & rugged design\n"
                    "✅ Versatile for work & adventure"
-                   f"{border}")
+                   f"\n{border}")
 
 welcome = "Welcome at car dealership!"
 

@@ -51,11 +51,10 @@ try:
                                 break
                             elif option == "1" or option == "2" or option == "3":
 
-
                                 while True:
-                                    print()
+                                    print(f"\n{border}")
                                     dealership.find_mark(option)
-                                    print()
+                                    print(f"{border}\n")
 
                                     found = False
                                     model_option = input("Which one interests you?\n"
@@ -70,8 +69,9 @@ try:
                                         if model_option == car.model:
                                             found = True
                                             while True:
-                                                print(border)
+                                                print(f"\n{border}")
                                                 car.display_info()
+                                                print(f"{border}")
 
                                                 buy_option = input("\nDo you want to buy this auto? (y/n)\n"
                                                                "      [q to quit]  [b to back]       \n"
@@ -109,9 +109,44 @@ try:
                             elif option == "B":
                                 break
                             elif option == "1" or option == "2" or option == "3":
-                                print()
-                                dealership.find_type(option)
-                                print()
+
+                                while True:
+                                    print(f"\n{border}")
+                                    dealership.find_type(option)
+                                    print(border)
+
+
+                                    found = False
+                                    model_option = input("\nWhich one interests you?\n"
+                                                         "Enter a model: ").upper()
+
+                                    for car in dealership.cars:
+                                        if model_option == car.model:
+                                            found = True
+                                            while True:
+                                                print(f"\n{border}")
+                                                car.display_info()
+                                                print(f"{border}")
+
+                                                buy_option = input("\nDo you want to buy this auto? (y/n)\n"
+                                                                   "      [q to quit]  [b to back]       \n"
+                                                                   "Enter your choice: ").upper()
+
+                                                if buy_option == "Q":
+                                                    GoodByeClient()
+                                                elif buy_option == "B":
+                                                    break
+                                                elif buy_option == "Y":
+                                                    print(
+                                                        f"\nCongratulations! You have purchased a car {car.make} {car.model} {car.year}. Deal amount - {car.cost}$")
+                                                    GoodByeClient()
+                                                elif buy_option == "N":
+                                                    break
+                                                else:
+                                                    print(invalid_option)
+                                    if not found:
+                                        print(invalid_option)
+
                             else:
                                 print(invalid_option)
 
@@ -126,7 +161,55 @@ try:
                             elif option == "B":
                                 break
                             else:
-                                dealership.find_model(option)
+                                found = False
+                                for car in dealership.cars:
+                                    if option == car.model:
+                                        while True:
+                                            print(f"\n{border}")
+                                            dealership.find_model(option)
+                                            print(border)
+
+                                            found = True
+
+                                            # while True:
+                                            model_option = input("\nHave you been looking for this car? (y/n)\n"
+                                                                 "         [q to quit]  [b to back]          \n"
+                                                                 "Enter a model: ").upper()
+                                            if model_option == "Q":
+                                                GoodByeClient()
+                                            if model_option == "B":
+                                                break
+                                            elif model_option == "Y":
+
+                                                while True:
+                                                    print(f"\n{border}")
+                                                    car.display_info()
+                                                    print(f"{border}")
+
+                                                    buy_option = input("\nDo you want to buy this auto? (y/n)\n"
+                                                                       "      [q to quit]  [b to back]       \n"
+                                                                       "Enter your choice: ").upper()
+
+                                                    if buy_option == "Q":
+                                                        GoodByeClient()
+                                                    elif buy_option == "B":
+                                                        break
+                                                    elif buy_option == "Y":
+                                                        print(
+                                                            f"\nCongratulations! You have purchased a car {car.make} {car.model} {car.year}. Deal amount - {car.cost}$")
+                                                        GoodByeClient()
+                                                    elif buy_option == "N":
+                                                        break
+                                                    else:
+                                                        print(invalid_option)
+
+                                            elif model_option == "N":
+                                                break
+                                            else:
+                                                print(invalid_option)
+
+                                if not found:
+                                    print(f"\n{option} not found in the list of available vehicles.")
 
                     case "4":
                         print()
@@ -145,7 +228,7 @@ try:
                             elif option == "B":
                                 break
                             elif option == "1" or option == "2":
-                                print(border)
+                                print(f"\n{border}")
                                 dealership.sort_price(option)
                                 print(border)
                             else:
