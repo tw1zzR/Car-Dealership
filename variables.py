@@ -1,14 +1,28 @@
 
+
+
 border = "----------------------------------"
 dealership_border = "----------CAR-DEALERSHIP----------"
 
 invalid_option = "\nInvalid variation, please select between options."
+q_b_options = "[q to quit]  [b to back]"
 
-options = ("\nWhat do you want? [q to quit]\n"
+what_do_you_want_1 = ("\nWhat do you want? [q to quit]\n"
            " 1. Buy a car\n"
            " 2. Work schedule\n"
            " 3. About us\n"
            "Select your option: ")
+
+what_are_you_interested_in_2 = ("\nWhat are you interested in?\n"
+                                      " [q to quit]  [b to back]\n"
+                                      "   ↓   ↓   ↓  ↓   ↓   ↓   \n"
+                                      " 1. Choose mark\n"
+                                      " 2. Choose type \n"
+                                      " 3. Find a model\n"
+                                      " 4. All cars in stock\n"
+                                      " 5. Sort by price\n"
+                                      " 6. Car type benefits\n"
+                                      "Select: ")
 
 crossover_benefits = (f"\n{border}\n"
                       "🚙 SUV (Crossover):\n"
@@ -30,6 +44,36 @@ pickup_benefits = (f"\n{border}\n"
                    "✅ Durable & rugged design\n"
                    "✅ Versatile for work & adventure"
                    f"\n{border}")
+
+# car_purchase_msg = f"\nCongratulations! You have purchased a car {car.make} {car.model} {car.year}.\nDeal amount - {car.cost}$"
+
+buy_this_car_question = ("\nDo you want to buy this auto? (y/n)\n"
+                       f"      {q_b_options}       \n"
+                        "Enter your choice: ")
+
+which_one_interests_you = ("Which one interests you?\n"
+                        f"{q_b_options}\n"
+                         "Enter a model: ")
+
+choose_type_of_car_opt = (f"\nChoose type of car:\n"
+                          f"{q_b_options}\n"
+                          f" 1. Crossovers\n"
+                          f" 2. Sportcars\n"
+                          f" 3. Pickups\n"
+                          f"Select type: ")
+
+how_to_sort_opt = ("\nHow you want to sort?\n"
+                  f"{q_b_options}\n"
+                   " 1. Low to High ↑\n"
+                   " 2. High to Low ↓\n"
+                   "Select option: ")
+
+choose_benefits_output = ("\nChoose option:\n"
+                         f"{q_b_options}\n"
+                          " 1. Crossovers\n"
+                          " 2. Sportcars\n"
+                          " 3. Pickups\n"
+                          "Select: ")
 
 welcome = "Welcome at car dealership!"
 
