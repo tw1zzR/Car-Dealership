@@ -1,6 +1,4 @@
 
-
-
 border = "----------------------------------"
 dealership_border = "----------CAR-DEALERSHIP----------"
 
