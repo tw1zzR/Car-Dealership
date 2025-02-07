@@ -8,7 +8,7 @@ class Dealership:
 
     cars = [Crossover("BMW", "X5", 2019, 83, 56300, True, False),
             Sportcar("BMW", "M4", 2018, 59, 55000, False, True),
-            Pickup("BMW", "X7 PICK-UP", 2021, 88, 45750, True, True),
+            Pickup("BMW", "X7", 2021, 88, 45750, True, True),
             Crossover("AUDI", "Q7", 2020, 85, 60000, True, False),
             Sportcar("AUDI", "R8", 2023, 73, 72500, True, True),
             Pickup("AUDI", "ACTIVESPHERE", 2025, 0, 43200, False, True),
@@ -75,7 +75,7 @@ class Dealership:
         found = False
 
         for car in self.cars:
-            if model == car.model.split()[0]:
+            if model == car.model:
                 print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                 print(f"Fuel capacity: {car.fuel_capacity}")
                 # Other stats
