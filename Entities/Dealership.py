@@ -1,8 +1,7 @@
 from Entities.CarCrossovers import Crossover
 from Entities.CarSportcars import Sportcar
 from Entities.CarPickups import Pickup
-from methods import GoodByeClient
-from variables import border, invalid_option, which_one_interests_you, buy_this_car_question
+from variables import border
 
 
 class Dealership:
@@ -15,8 +14,7 @@ class Dealership:
             Pickup("AUDI", "ACTIVESPHERE", 2025, 0, 43200, False, True),
             Crossover("HONDA", "CR-V", 2022, 57, 51050, True, True),
             Sportcar("HONDA", "NSX", 2015, 59, 34600, False, True),
-            Pickup("HONDA", "RIDGELINE", 2024, 73, 31900, True, False)
-            ]
+            Pickup("HONDA", "RIDGELINE", 2024, 73, 31900, True, False)]
 
     brands = []
 
@@ -111,44 +109,3 @@ class Dealership:
 
         for car in self.cars:
             print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-
-
-    # Final deal functions
-
-    # def confirm_deal(self):
-    #
-    #     while True:
-    #         print(f"\n{border}")
-    #         self.dealership_functions_for_options[selection](option)
-    #         print(f"{border}\n")
-    #
-    #         model_option = input(which_one_interests_you).upper()
-    #
-    #         if model_option == "Q":
-    #             GoodByeClient()
-    #         elif model_option == "B":
-    #             return model_option.upper() != "B"
-    #         else:
-    #             found = False
-    #             for car in self.cars:
-    #                 if model_option == car.model:
-    #                     while True:
-    #                         print(f"\n{border}")
-    #                         car.display_info()
-    #                         print(f"{border}")
-    #
-    #                         found = True
-    #                         buy_option = input(buy_this_car_question).upper()
-    #
-    #                         if buy_option == "Q":
-    #                             GoodByeClient()
-    #                         elif buy_option == "B" or buy_option == "N":
-    #                             break
-    #                         elif buy_option == "Y":
-    #                             print(
-    #                                 f"\nCongratulations! You have purchased a car {car.make} {car.model} {car.year}.\nDeal amount - {car.cost}$")
-    #                             GoodByeClient()
-    #                         else:
-    #                             print(invalid_option)
-    #             if not found:
-    #                 print(f"\n{model_option} not found in the list of available vehicles.")
