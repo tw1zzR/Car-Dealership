@@ -1,6 +1,4 @@
-
-
-class CarInfo:
+class Car:
     brands = []
 
     def __init__(self, make, model, year, fuel_capacity, cost, front_wheel, rear_wheel, type):
@@ -34,23 +32,23 @@ class CarInfo:
         print(f"Year: {self.year}")
         print(f"Type: {self.type}")
         print(f"Fuel capacity: {self.fuel_capacity}")
-        CarInfo.check_drive(self)
+        Car.check_drive(self)
         print(f"Cost: {self.cost}$")
 
 
-class Crossover(CarInfo):
+class Crossover(Car):
     type = "Crossover"
 
     def __init__(self, make, model, year, fuel_capacity, cost, front_wheel, rear_wheel):
         super().__init__(make, model, year, fuel_capacity, cost, front_wheel, rear_wheel, self.type)
 
-class Sportcar(CarInfo):
+class Sportcar(Car):
     type = "Sportcar"
 
     def __init__(self, make, model, year, fuel_capacity, cost, front_wheel, rear_wheel):
         super().__init__(make, model, year, fuel_capacity, cost, front_wheel, rear_wheel, self.type)
 
-class Pickup(CarInfo):
+class Pickup(Car):
     type = "Pickup"
 
     def __init__(self, make, model, year, fuel_capacity, cost, front_wheel, rear_wheel):

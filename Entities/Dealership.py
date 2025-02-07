@@ -1,5 +1,5 @@
 from Entities.Cars import *
-from main import selection, option
+# from main import selection, option
 from methods import GoodByeClient
 from variables import border, invalid_option, which_one_interests_you, buy_this_car_question
 
