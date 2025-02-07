@@ -1,7 +1,6 @@
-from Entities.Cars import CarInfo
+from Entities.Cars import Car
 from variables import *
 from methods import GoodByeClient
-# from create_dealership import dealership
 from Entities.Dealership import Dealership
 
 dealership = Dealership()
@@ -31,12 +30,12 @@ try:
                             while True:
                                 i = 1
 
-                                print("\nAvailable marks:\n"
+                                print("\nAvailable car makes:\n"
                                       f" {q_b_options}")
-                                for car in CarInfo.brands:
+                                for car in dealership.brands:
                                     print(f"{i}. {car}")
                                     i += 1
-                                option = input("Select mark: ").upper()
+                                option = input("Select car make: ").upper()
 
                                 if option == "Q":
                                     GoodByeClient()
@@ -49,7 +48,7 @@ try:
 
                                     while True:
                                         print(f"\n{border}")
-                                        dealership.find_mark(option)
+                                        dealership.find_car_make(option)
                                         print(f"{border}\n")
 
                                         model_option = input(which_one_interests_you).upper()

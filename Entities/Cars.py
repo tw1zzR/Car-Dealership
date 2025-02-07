@@ -1,5 +1,4 @@
 class Car:
-    brands = []
 
     def __init__(self, make, model, year, fuel_capacity, cost, front_wheel, rear_wheel, type):
         self.make = make
@@ -10,9 +9,6 @@ class Car:
         self.front_wheel = front_wheel
         self.rear_wheel = rear_wheel
         self.type = type
-
-        if self.make not in self.brands:
-            self.brands.append(self.make)
 
         if front_wheel and rear_wheel:
             self.all_wheels = True
@@ -34,23 +30,3 @@ class Car:
         print(f"Fuel capacity: {self.fuel_capacity}")
         Car.check_drive(self)
         print(f"Cost: {self.cost}$")
-
-
-class Crossover(Car):
-    type = "Crossover"
-
-    def __init__(self, make, model, year, fuel_capacity, cost, front_wheel, rear_wheel):
-        super().__init__(make, model, year, fuel_capacity, cost, front_wheel, rear_wheel, self.type)
-
-class Sportcar(Car):
-    type = "Sportcar"
-
-    def __init__(self, make, model, year, fuel_capacity, cost, front_wheel, rear_wheel):
-        super().__init__(make, model, year, fuel_capacity, cost, front_wheel, rear_wheel, self.type)
-
-class Pickup(Car):
-    type = "Pickup"
-
-    def __init__(self, make, model, year, fuel_capacity, cost, front_wheel, rear_wheel):
-        super().__init__(make, model, year, fuel_capacity, cost, front_wheel, rear_wheel, self.type)
-
