@@ -39,25 +39,28 @@ try:
                                 option = input("Select car make: ").upper()
                                 print()
 
-                                i = 1
                                 match option:
                                     case "Q":
                                         GoodByeClient()
                                     case "B":
                                         break
                                     case "1" | "BMW":
-                                        list_brand_cars = dealership.find_car_make("BMW")
+                                        tuple_brand_cars = dealership.find_car_make("BMW")
                                     case "2" | "AUDI":
-                                        list_brand_cars = dealership.find_car_make("BMW")
+                                        tuple_brand_cars = dealership.find_car_make("AUDI")
                                     case "3" | "HONDA":
-                                        list_brand_cars = dealership.find_car_make("BMW")
+                                        tuple_brand_cars = dealership.find_car_make("HONDA")
                                     case _:
                                         print(invalid_option)
                                         continue
 
-                                for car in list_brand_cars:
-                                    print(f"{i}) {car}")
-                                    i += 1
+                                # Display cars
+                                for car in tuple_brand_cars:
+                                    print(f"{border}")
+
+                                    for car_stats in car:
+                                        print(f"{car_stats}")
+                                print(f"{border}")
 
                         case "2":
 
@@ -65,7 +68,6 @@ try:
                                 option = input(choose_type_of_car_opt).upper()
                                 print()
 
-                                i = 1
                                 match option:
                                     case "Q":
                                         GoodByeClient()
@@ -73,20 +75,24 @@ try:
                                         break
                                     case "1" | "CROSSOVER":
                                         kind_of_car = "Crossover"
-                                        list_type_cars = dealership.find_car_type(kind_of_car)
+                                        tuple_type_cars = dealership.find_car_type(kind_of_car)
                                     case "2" | "SPORTCAR":
                                         kind_of_car = "Sportcar"
-                                        list_type_cars = dealership.find_car_type(kind_of_car)
+                                        tuple_type_cars = dealership.find_car_type(kind_of_car)
                                     case "3" | "PICKUP":
                                         kind_of_car = "Pickup"
-                                        list_type_cars = dealership.find_car_type(kind_of_car)
+                                        tuple_type_cars = dealership.find_car_type(kind_of_car)
                                     case _:
                                         print(invalid_option)
                                         continue
 
-                                for car in list_type_cars:
-                                    print(f"{i}) {car}")
-                                    i += 1
+                                # Display cars
+                                for car in tuple_type_cars:
+                                    print(f"{border}")
+
+                                    for car_stats in car:
+                                        print(f"{car_stats}")
+                                print(f"{border}")
 
                         case "3":
 
@@ -94,23 +100,27 @@ try:
                                 model_option = input(looking_for_car_model).upper()
                                 print()
 
-                                i = 1
                                 match model_option:
                                     case "Q":
                                         GoodByeClient()
                                     case "B":
                                         break
                                     case _:
-                                        list_model_cars = dealership.find_car_model(model_option)
+                                        tuple_model_cars = dealership.find_car_model(model_option)
 
-                                        for car in list_model_cars:
+                                        for car in tuple_model_cars:
                                             if car.startswith("(!)"):
                                                 invalid_car_model = car
                                                 print(invalid_car_model)
                                                 break
                                             else:
-                                                print(f"{i}) {car}")
-                                                i += 1
+                                                # Display cars
+                                                for car in tuple_model_cars:
+                                                    print(f"{border}")
+
+                                                    for car_stats in car:
+                                                        print(f"{car_stats}")
+                                                print(f"{border}")
 
                         case "4":
                             print()

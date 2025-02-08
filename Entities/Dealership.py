@@ -9,7 +9,7 @@ class Dealership:
 
     cars = [Crossover("BMW", "X5", 2019, 83, 56300, True, False),
             Sportcar("BMW", "M4", 2018, 59, 55000, False, True),
-            Sportcar("BMW", "M4", 2016, 54, 52400, False, True),
+            Sportcar("BMW", "M4", 2016, 54, 52400, True, True),
             Pickup("BMW", "X7", 2021, 88, 45750, True, True),
             Crossover("AUDI", "Q7", 2020, 85, 60000, True, False),
             Sportcar("AUDI", "R8", 2023, 73, 72500, True, True),
@@ -33,18 +33,21 @@ class Dealership:
 
         for car in self.cars:
             if car.make == brand:
-                yield f"{car.cost}$ - {car.make} {car.model} {car.year}"
+                yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+                       f"Fuel Capacity: {car.fuel_capacity}",
+                       CarsInfo.check_drive(car))
+
 
     def find_car_type(self, type):
-
         class_type = globals()[type]
 
         for car in self.cars:
             if isinstance(car, class_type):
-                yield f"{car.cost}$ - {car.make} {car.model} {car.year}"
+                yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+                       f"Fuel Capacity: {car.fuel_capacity}",
+                       CarsInfo.check_drive(car))
             else:
                 continue
-
 
 
     def find_car_model(self, model):
@@ -53,7 +56,9 @@ class Dealership:
         for car in self.cars:
             if model == car.model:
                 found = True
-                yield f"{car.cost}$ - {car.make} {car.model} {car.year}"
+                yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+                       f"Fuel Capacity: {car.fuel_capacity}",
+                       CarsInfo.check_drive(car))
             else:
                 continue
         if not found:

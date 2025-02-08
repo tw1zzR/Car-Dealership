@@ -10,6 +10,9 @@ class Car:
         self.rear_wheel = rear_wheel
         self.type = type
 
+        if self.fuel_capacity == 0:
+            self.fuel_capacity = "Electro (0)"
+
         if front_wheel and rear_wheel:
             self.all_wheels = True
         else:
