@@ -74,16 +74,12 @@ class Dealership:
                    CarsInfo.check_drive(car))
 
 
-    def sort_price(self, price):
+    def sort_price(self, reverse_sort=False):
 
         def cost_key(e):
             return e.cost
 
-        match price:
-            case "1": # High to Low
-                self.cars.sort(key=cost_key)
-            case "2": # Low to High
-                self.cars.sort(reverse=True, key=cost_key)
+        self.cars.sort(key=cost_key, reverse=reverse_sort)
 
         for car in self.cars:
-            print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
+            yield f"{car.cost}$ | {car.make} {car.model} {car.year}"

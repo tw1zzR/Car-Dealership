@@ -137,16 +137,22 @@ try:
                             while True:
                                 option = input(how_to_sort_opt).upper()
 
-                                if option == "Q":
-                                    GoodByeClient()
-                                elif option == "B":
-                                    break
-                                elif option == "1" or option == "2":
-                                    print(f"\n{border}")
-                                    dealership.sort_price(option)
-                                    print(border)
-                                else:
-                                    print(invalid_option)
+                                match option:
+                                    case "Q":
+                                        GoodByeClient()
+                                    case "B":
+                                        break
+                                    case "1":
+                                        tuple_of_sorted_cars = dealership.sort_price()
+                                    case "2":
+                                        tuple_of_sorted_cars = dealership.sort_price(reverse_sort=True)
+                                    case _:
+                                        print(invalid_option)
+
+                                print(f"\n{border}")
+                                for car in tuple_of_sorted_cars:
+                                    print(car)
+                                print(border)
 
                         case "6":
 
