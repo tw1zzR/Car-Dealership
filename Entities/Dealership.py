@@ -2,7 +2,7 @@ from Entities.CarCrossovers import Crossover
 from Entities.CarSportcars import Sportcar
 from Entities.CarPickups import Pickup
 from Entities.CarsInfo import CarsInfo
-from variables import border
+from variables import border, invalid_option
 
 
 class Dealership:
@@ -34,31 +34,16 @@ class Dealership:
             if car.make == brand:
                 yield f"{car.cost}$ - {car.make} {car.model} {car.year}"
 
+    def find_car_type(self, type):
 
-    def find_type(self, type):
-        quantity = 0
+        class_type = globals()[type]
 
-        match type:
-            case "1": # Crossovers
-                for car in self.cars:
-                    if isinstance(car, Crossover):
-                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-                        quantity += 1
-                print(f"\nAvailable {quantity} crossovers.")
-            case "2": # Sportcars
-                for car in self.cars:
-                    if isinstance(car, Sportcar):
-                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-                        quantity += 1
-                print(f"\nAvailable {quantity} sportcars.")
-            case "3": # Pickups
-                for car in self.cars:
-                    if isinstance(car, Pickup):
-                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-                        quantity += 1
-                print(f"\nAvailable {quantity} pickups.")
-            case _:
-                print(f"{type} is not in stock.")
+        for car in self.cars:
+            if isinstance(car, class_type):
+                yield f"{car.cost}$ - {car.make} {car.model} {car.year}"
+            else:
+                continue
+
 
 
     def find_model(self, model):

@@ -46,6 +46,9 @@ try:
                                     list_brand_cars = dealership.find_car_make("BMW")
                                 case "3" | "HONDA":
                                     list_brand_cars = dealership.find_car_make("BMW")
+                                case _:
+                                    print(invalid_option)
+                                    continue
 
                             for car in list_brand_cars:
                                 print(f"{i}) {car}")
@@ -55,15 +58,30 @@ try:
 
                             while True:
                                 option = input(choose_type_of_car_opt).upper()
+                                print()
 
-                                if option == "Q":
-                                    GoodByeClient()
-                                elif option == "B":
-                                    break
-                                elif option == "1" or option == "2" or option == "3":
-                                    print(f"\n{border}")
-                                    dealership.find_type(option)
-                                    print(border)
+                                i = 1
+                                match option:
+                                    case "Q":
+                                        GoodByeClient()
+                                    case "B":
+                                        break
+                                    case "1" | "CROSSOVER":
+                                        kind_of_car = "Crossover"
+                                        list_type_cars = dealership.find_car_type(kind_of_car)
+                                    case "2" | "SPORTCAR":
+                                        kind_of_car = "Sportcar"
+                                        list_type_cars = dealership.find_car_type(kind_of_car)
+                                    case "3" | "PICKUP":
+                                        kind_of_car = "Pickup"
+                                        list_type_cars = dealership.find_car_type(kind_of_car)
+                                    case _:
+                                        print(invalid_option)
+                                        continue
+
+                                for car in list_type_cars:
+                                    print(f"{i}) {car}")
+                                    i += 1
 
                         case "3":
 
