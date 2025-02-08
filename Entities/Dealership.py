@@ -1,6 +1,7 @@
 from Entities.CarCrossovers import Crossover
 from Entities.CarSportcars import Sportcar
 from Entities.CarPickups import Pickup
+from Entities.CarsInfo import CarsInfo
 from variables import border
 
 
@@ -79,7 +80,7 @@ class Dealership:
                 print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
                 print(f"Fuel capacity: {car.fuel_capacity}")
                 # Other stats
-                car.check_drive()
+                print(CarsInfo.check_drive(car))
                 found = True
 
         if not found:
@@ -92,7 +93,7 @@ class Dealership:
             print(f"{car.make} {car.model} {car.year}")
             print(f"Fuel capacity: {car.fuel_capacity}")
             # Other stats
-            car.check_drive()
+            print(CarsInfo.check_drive(car))
             print(f"Cost: {car.cost}$")
 
 
