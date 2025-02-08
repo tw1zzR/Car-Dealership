@@ -27,11 +27,30 @@ try:
                             break
                         case "1":
                             i = 1
-
                             print("\nAvailable car makes:")
                             for car in dealership.brands:
-                                print(f"{i}. {car}")
+                                print(f" {i}. {car}")
                                 i += 1
+                            option = input("Select car make: ").upper()
+                            print()
+
+                            i = 1
+                            match option:
+                                case "Q":
+                                    GoodByeClient()
+                                case "B":
+                                    break
+                                case "1" | "BMW":
+                                    list_brand_cars = dealership.find_car_make("BMW")
+                                case "2" | "AUDI":
+                                    list_brand_cars = dealership.find_car_make("BMW")
+                                case "3" | "HONDA":
+                                    list_brand_cars = dealership.find_car_make("BMW")
+
+                            for car in list_brand_cars:
+                                print(f"{i}) {car}")
+                                i += 1
+
                         case "2":
 
                             while True:

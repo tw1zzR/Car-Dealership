@@ -22,6 +22,7 @@ class Dealership:
     def __init__(self):
         self.dealership_name = "9LPUK-XY9LPUK"
 
+        # Brands appending
         for car in self.cars:
             if car.make not in self.brands:
                 self.brands.append(car.make)
@@ -29,21 +30,9 @@ class Dealership:
     # Dealership abilities
     def find_car_make(self, brand):
 
-        match brand:
-            case "1": # BMW
-                for car in self.cars:
-                    if car.make == "BMW":
-                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-            case "2": # AUDI
-                for car in self.cars:
-                    if car.make == "AUDI":
-                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-            case "3": # HONDA
-                for car in self.cars:
-                    if car.make == "HONDA":
-                        print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-            case _:
-                print(f"{brand} is not in stock.")
+        for car in self.cars:
+            if car.make == brand:
+                yield f"{car.cost}$ - {car.make} {car.model} {car.year}"
 
 
     def find_type(self, type):
