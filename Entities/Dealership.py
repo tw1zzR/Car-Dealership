@@ -9,6 +9,7 @@ class Dealership:
 
     cars = [Crossover("BMW", "X5", 2019, 83, 56300, True, False),
             Sportcar("BMW", "M4", 2018, 59, 55000, False, True),
+            Sportcar("BMW", "M4", 2016, 54, 52400, False, True),
             Pickup("BMW", "X7", 2021, 88, 45750, True, True),
             Crossover("AUDI", "Q7", 2020, 85, 60000, True, False),
             Sportcar("AUDI", "R8", 2023, 73, 72500, True, True),
@@ -46,19 +47,17 @@ class Dealership:
 
 
 
-    def find_model(self, model):
+    def find_car_model(self, model):
         found = False
 
         for car in self.cars:
             if model == car.model:
-                print(f"{car.cost}$ - {car.make} {car.model} {car.year}")
-                print(f"Fuel capacity: {car.fuel_capacity}")
-                # Other stats
-                print(CarsInfo.check_drive(car))
                 found = True
-
+                yield f"{car.cost}$ - {car.make} {car.model} {car.year}"
+            else:
+                continue
         if not found:
-            print(f"{model} is not in stock.")
+            yield f"(!) Car model '{model}' is not in stock."
 
 
     def stock_cars(self):

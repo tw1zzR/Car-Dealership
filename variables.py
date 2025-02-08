@@ -2,7 +2,7 @@
 border = "----------------------------------"
 dealership_border = "----------CAR-DEALERSHIP----------"
 
-invalid_option = "\nInvalid variation, please select between options."
+invalid_option = "\n(!) Invalid variation, please select between options."
 q_b_options = "[q to quit]  [b to back]"
 
 what_do_you_want_1 = ("\nWhat do you want? [q to quit]\n"
@@ -59,6 +59,10 @@ choose_type_of_car_opt = (f"\nChoose type of car:\n"
                           f" 2. Sportcars\n"
                           f" 3. Pickups\n"
                           f"Select type: ")
+
+looking_for_car_model = ("\nWhat model are you looking for?\n"
+                           f"   {q_b_options}      \n"
+                           "Enter a car model: ")
 
 how_to_sort_opt = ("\nHow you want to sort?\n"
                   f"{q_b_options}\n"

@@ -26,33 +26,38 @@ try:
                         case "B":
                             break
                         case "1":
-                            i = 1
-                            print("\nAvailable car makes:")
-                            for car in dealership.brands:
-                                print(f" {i}. {car}")
-                                i += 1
-                            option = input("Select car make: ").upper()
-                            print()
 
-                            i = 1
-                            match option:
-                                case "Q":
-                                    GoodByeClient()
-                                case "B":
-                                    break
-                                case "1" | "BMW":
-                                    list_brand_cars = dealership.find_car_make("BMW")
-                                case "2" | "AUDI":
-                                    list_brand_cars = dealership.find_car_make("BMW")
-                                case "3" | "HONDA":
-                                    list_brand_cars = dealership.find_car_make("BMW")
-                                case _:
-                                    print(invalid_option)
-                                    continue
+                            while True:
+                                print("\nAvailable car makes:\n"
+                                      f"{q_b_options}")
 
-                            for car in list_brand_cars:
-                                print(f"{i}) {car}")
-                                i += 1
+                                i = 1
+                                for car in dealership.brands:
+                                    print(f" {i}. {car}")
+                                    i += 1
+
+                                option = input("Select car make: ").upper()
+                                print()
+
+                                i = 1
+                                match option:
+                                    case "Q":
+                                        GoodByeClient()
+                                    case "B":
+                                        break
+                                    case "1" | "BMW":
+                                        list_brand_cars = dealership.find_car_make("BMW")
+                                    case "2" | "AUDI":
+                                        list_brand_cars = dealership.find_car_make("BMW")
+                                    case "3" | "HONDA":
+                                        list_brand_cars = dealership.find_car_make("BMW")
+                                    case _:
+                                        print(invalid_option)
+                                        continue
+
+                                for car in list_brand_cars:
+                                    print(f"{i}) {car}")
+                                    i += 1
 
                         case "2":
 
@@ -86,24 +91,26 @@ try:
                         case "3":
 
                             while True:
-                                model_option = input("\nWhat model are you looking for?\n"
-                                               f"   {q_b_options}      \n"
-                                               "Enter a car model: ").upper()
-                                if model_option == "Q":
-                                    GoodByeClient()
-                                elif model_option == "B":
-                                    break
-                                else:
-                                    found = False
-                                    for car in dealership.cars:
-                                        if model_option == car.model:
-                                            found = True
+                                model_option = input(looking_for_car_model).upper()
+                                print()
 
-                                            print(f"\n{border}")
-                                            dealership.find_model(model_option)
-                                            print(border)
-                                    if not found:
-                                        print(f"\n{model_option} not found in the list of available vehicles.")
+                                i = 1
+                                match model_option:
+                                    case "Q":
+                                        GoodByeClient()
+                                    case "B":
+                                        break
+                                    case _:
+                                        list_model_cars = dealership.find_car_model(model_option)
+
+                                        for car in list_model_cars:
+                                            if car.startswith("(!)"):
+                                                invalid_car_model = car
+                                                print(invalid_car_model)
+                                                break
+                                            else:
+                                                print(f"{i}) {car}")
+                                                i += 1
 
                         case "4":
                             print()
