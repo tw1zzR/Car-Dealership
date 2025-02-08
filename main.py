@@ -56,11 +56,11 @@ try:
 
                                 # Display cars
                                 for car in tuple_brand_cars:
-                                    print(f"{border}")
+                                    print(border)
 
                                     for car_stats in car:
                                         print(f"{car_stats}")
-                                print(f"{border}")
+                                print(border)
 
                         case "2":
 
@@ -88,11 +88,11 @@ try:
 
                                 # Display cars
                                 for car in tuple_type_cars:
-                                    print(f"{border}")
+                                    print(border)
 
                                     for car_stats in car:
                                         print(f"{car_stats}")
-                                print(f"{border}")
+                                print(border)
 
                         case "3":
 
@@ -116,15 +116,20 @@ try:
                                             else:
                                                 # Display cars
                                                 for car in tuple_model_cars:
-                                                    print(f"{border}")
+                                                    print(border)
 
                                                     for car_stats in car:
                                                         print(f"{car_stats}")
-                                                print(f"{border}")
+                                                print(border)
 
                         case "4":
+                            tuple_of_stock_cars = dealership.all_stock_cars()
+
                             print()
-                            dealership.stock_cars()
+                            # Display cars
+                            for car in tuple_of_stock_cars:
+                                for car_stats in car:
+                                    print(f"{car_stats}")
                             print(border)
 
                         case "5":

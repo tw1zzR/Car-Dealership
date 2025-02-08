@@ -65,14 +65,13 @@ class Dealership:
             yield f"(!) Car model '{model}' is not in stock."
 
 
-    def stock_cars(self):
+    def all_stock_cars(self):
+
         for car in self.cars:
             print(border)
-            print(f"{car.make} {car.model} {car.year}")
-            print(f"Fuel capacity: {car.fuel_capacity}")
-            # Other stats
-            print(CarsInfo.check_drive(car))
-            print(f"Cost: {car.cost}$")
+            yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+                   f"Fuel Capacity: {car.fuel_capacity}",
+                   CarsInfo.check_drive(car))
 
 
     def sort_price(self, price):
