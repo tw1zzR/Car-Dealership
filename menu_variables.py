@@ -18,8 +18,6 @@ what_are_you_interested_in_2 = ("\nWhat are you interested in?\n"
                                       " 6. Car type's benefits\n"
                                       "Select: ")
 
-
-
 choose_type_of_car_opt = (f"\nChoose type of car:\n"
                           f"{q_b_options}\n"
                           f" 1. Crossovers\n"

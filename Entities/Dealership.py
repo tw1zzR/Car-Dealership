@@ -17,7 +17,6 @@ class Dealership:
             Crossover("HONDA", "CR-V", 2022, 57, 51050, True, True),
             Sportcar("HONDA", "NSX", 2015, 59, 34600, False, True),
             Pickup("HONDA", "RIDGELINE", 2024, 73, 31900, True, False)]
-
     brands = []
 
     def __init__(self):
@@ -32,47 +31,27 @@ class Dealership:
     def find_car_make(self, brand):
         for car in self.cars:
             if car.make == brand:
-                yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
-                       f"Fuel Capacity: {car.fuel_capacity}",
-                       CarsInfo.check_drive(car))
-
+                yield CarsInfo.show_car_info(car)
 
     def find_car_type(self, type):
         class_type = globals()[type]
 
         for car in self.cars:
             if isinstance(car, class_type):
-                yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
-                       f"Fuel Capacity: {car.fuel_capacity}",
-                       CarsInfo.check_drive(car))
-            else:
-                continue
-
+                yield CarsInfo.show_car_info(car)
 
     def find_car_model(self, model):
         for car in self.cars:
             if model == car.model:
                 yield car
 
-
-    def get_car_as_string(self, car):
-        return (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
-               f"Fuel Capacity: {car.fuel_capacity}",
-               CarsInfo.check_drive(car))
-
-
     def all_stock_cars(self):
         for car in self.cars:
             print(border)
-            yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
-                   f"Fuel Capacity: {car.fuel_capacity}",
-                   CarsInfo.check_drive(car))
-
+            yield CarsInfo.show_car_info(car)
 
     def sort_price(self, reverse_sort=False):
         sorted_cars = sorted(self.cars, key=lambda car: car.cost, reverse=reverse_sort)
 
         for car in sorted_cars:
-            yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
-                   f"Fuel Capacity: {car.fuel_capacity}",
-                   CarsInfo.check_drive(car))
+            yield CarsInfo.show_car_info(car)

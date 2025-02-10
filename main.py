@@ -2,6 +2,7 @@ from variables import *
 from menu_variables import *
 from methods import GoodByeClient
 from Entities.Dealership import Dealership
+from Entities.CarsInfo import CarsInfo
 
 dealership = Dealership()
 
@@ -116,7 +117,7 @@ try:
                                             continue
 
                                         for car in model_cars:
-                                            tuple_of_car_stats = dealership.get_car_as_string(car)
+                                            tuple_of_car_stats = CarsInfo.show_car_info(car)
 
                                             for car_stats in tuple_of_car_stats:
                                                 print(f"{car_stats}")
