@@ -1,4 +1,5 @@
 from variables import *
+from menu_variables import *
 from methods import GoodByeClient
 from Entities.Dealership import Dealership
 
