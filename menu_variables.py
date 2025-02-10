@@ -38,7 +38,6 @@ how_to_sort_opt = ("\nHow you want to sort?\n"
                    "Select option: ")
 
 # CASE 6
-
 choose_benefits_output = ("\nChoose option:\n"
                          f"{q_b_options}\n"
                           " 1. Crossovers\n"

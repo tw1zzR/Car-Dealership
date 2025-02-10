@@ -1,8 +1,8 @@
-from Entities.CarCrossovers import Crossover
-from Entities.CarSportcars import Sportcar
-from Entities.CarPickups import Pickup
+from Entities.Car.Crossovers import Crossover
+from Entities.Car.Sportcars import Sportcar
+from Entities.Car.Pickups import Pickup
 from Entities.CarsInfo import CarsInfo
-from variables import border, invalid_option
+from variables import border
 
 
 class Dealership:
@@ -30,7 +30,6 @@ class Dealership:
 
     # Dealership abilities
     def find_car_make(self, brand):
-
         for car in self.cars:
             if car.make == brand:
                 yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
@@ -50,28 +49,19 @@ class Dealership:
                 continue
 
 
-    def is_model_found(self, model, found=False):
-
+    def find_car_model(self, model):
         for car in self.cars:
             if model == car.model:
-                found = True
-                yield self.get_car_as_string(car)
-            else:
-                continue
-
-        if not found:
-            yield f"(!) Car model '{model}' is not in stock."
+                yield car
 
 
     def get_car_as_string(self, car):
-
         return (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
                f"Fuel Capacity: {car.fuel_capacity}",
                CarsInfo.check_drive(car))
 
 
     def all_stock_cars(self):
-
         for car in self.cars:
             print(border)
             yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
@@ -80,7 +70,6 @@ class Dealership:
 
 
     def sort_price(self, reverse_sort=False):
-
         sorted_cars = sorted(self.cars, key=lambda car: car.cost, reverse=reverse_sort)
 
         for car in sorted_cars:
