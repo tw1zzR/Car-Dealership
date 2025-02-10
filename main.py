@@ -38,7 +38,6 @@ try:
                                     i += 1
 
                                 option = input("Select car make: ").upper()
-                                print()
 
                                 match option:
                                     case "Q":
@@ -56,6 +55,7 @@ try:
                                         continue
 
                                 # Display cars
+                                print()
                                 for car in tuple_brand_cars:
                                     print(border)
 
@@ -67,7 +67,6 @@ try:
 
                             while True:
                                 option = input(choose_type_of_car_opt).upper()
-                                print()
 
                                 match option:
                                     case "Q":
@@ -88,6 +87,7 @@ try:
                                         continue
 
                                 # Display cars
+                                print()
                                 for car in tuple_type_cars:
                                     print(border)
 
@@ -148,6 +148,7 @@ try:
                                         tuple_of_sorted_cars = dealership.sort_price(reverse_sort=True)
                                     case _:
                                         print(invalid_option)
+                                        continue
 
                                 print(f"\n{border}")
                                 for car in tuple_of_sorted_cars:
