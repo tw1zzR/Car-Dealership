@@ -107,7 +107,7 @@ try:
                                     case "B":
                                         break
                                     case _:
-                                        tuple_model_cars = dealership.find_car_model(model_option)
+                                        tuple_model_cars = dealership.is_model_found(model_option)
 
                                         print(border)
                                         for car in tuple_model_cars:
@@ -116,11 +116,12 @@ try:
                                                 for car_stats in car:
                                                     print(f"{car_stats}")
                                                 print(border)
-                                            else:
-                                                invalid_car_model = car
-                                                print(invalid_car_model)
-                                                print(border)
-                                                break
+                                                continue
+
+                                            invalid_car_model = car
+                                            print(invalid_car_model)
+                                            print(border)
+                                            break
 
                         case "4":
                             tuple_of_stock_cars = dealership.all_stock_cars()

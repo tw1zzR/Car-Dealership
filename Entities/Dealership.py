@@ -50,19 +50,24 @@ class Dealership:
                 continue
 
 
-    def find_car_model(self, model):
-        found = False
+    def is_model_found(self, model, found=False):
 
         for car in self.cars:
             if model == car.model:
                 found = True
-                yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
-                       f"Fuel Capacity: {car.fuel_capacity}",
-                       CarsInfo.check_drive(car))
+                yield self.get_car_as_string(car)
             else:
                 continue
+
         if not found:
             yield f"(!) Car model '{model}' is not in stock."
+
+
+    def get_car_as_string(self, car):
+
+        return (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
+               f"Fuel Capacity: {car.fuel_capacity}",
+               CarsInfo.check_drive(car))
 
 
     def all_stock_cars(self):
