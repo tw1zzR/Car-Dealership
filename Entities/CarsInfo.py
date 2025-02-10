@@ -12,12 +12,3 @@ class CarsInfo(Car):
             return f"Front-Drive: {self.front_wheel}"
         elif self.rear_wheel and not self.front_wheel:
             return f"Rear-Drive: {self.rear_wheel}"
-
-    # Detailed info about car. Used in confirm deal, not needed
-    # def display_info(self):
-    #     print(f"Car: {self.make} {self.model}")
-    #     print(f"Year: {self.year}")
-    #     print(f"Type: {self.type}")
-    #     print(f"Fuel capacity: {self.fuel_capacity}")
-    #     Car.check_drive(self)
-    #     print(f"Cost: {self.cost}$")

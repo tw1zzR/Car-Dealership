@@ -43,8 +43,6 @@ pickup_benefits = (f"\n{border}\n"
                    "✅ Versatile for work & adventure"
                    f"\n{border}")
 
-# car_purchase_msg = f"\nCongratulations! You have purchased a car {car.make} {car.model} {car.year}.\nDeal amount - {car.cost}$"
-
 buy_this_car_question = ("\nDo you want to buy this auto? (y/n)\n"
                        f"      {q_b_options}       \n"
                         "Enter your choice: ")
