@@ -12,8 +12,8 @@ what_do_you_want_1 = ("\nWhat do you want? [q to quit]\n"
            "Select your option: ")
 
 what_are_you_interested_in_2 = ("\nWhat are you interested in?\n"
-                                      " [q to quit]  [b to back]\n"
-                                      "   ↓   ↓   ↓  ↓   ↓   ↓   \n"
+                                      " [q to quit]   [b to back]\n"
+                                      " ↓    ↓      ↓     ↓     ↓\n"
                                       " 1. Choose car make\n"
                                       " 2. Choose car type \n"
                                       " 3. Find a car model\n"
@@ -64,7 +64,7 @@ looking_for_car_model = ("\nWhat model are you looking for?\n"
 
 how_to_sort_opt = ("\nHow you want to sort?\n"
                   f"{q_b_options}\n"
-                   " 1. Low to High ↑\n"
+                   " 1. Low to High ↓\n"
                    " 2. High to Low ↓\n"
                    "Select option: ")
 

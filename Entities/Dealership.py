@@ -76,10 +76,7 @@ class Dealership:
 
     def sort_price(self, reverse_sort=False):
 
-        def cost_key(e):
-            return e.cost
-
-        sorted_cars = sorted(self.cars, key=cost_key, reverse=reverse_sort)
+        sorted_cars = sorted(self.cars, key=lambda car: car.cost, reverse=reverse_sort)
 
         for car in sorted_cars:
             yield f"{car.cost}$ | {car.make} {car.model} {car.year}"
