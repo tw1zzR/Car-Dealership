@@ -33,7 +33,7 @@ class Dealership:
 
         for car in self.cars:
             if car.make == brand:
-                yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+                yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
                        f"Fuel Capacity: {car.fuel_capacity}",
                        CarsInfo.check_drive(car))
 
@@ -43,7 +43,7 @@ class Dealership:
 
         for car in self.cars:
             if isinstance(car, class_type):
-                yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+                yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
                        f"Fuel Capacity: {car.fuel_capacity}",
                        CarsInfo.check_drive(car))
             else:
@@ -56,7 +56,7 @@ class Dealership:
         for car in self.cars:
             if model == car.model:
                 found = True
-                yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+                yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
                        f"Fuel Capacity: {car.fuel_capacity}",
                        CarsInfo.check_drive(car))
             else:
@@ -69,7 +69,7 @@ class Dealership:
 
         for car in self.cars:
             print(border)
-            yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+            yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
                    f"Fuel Capacity: {car.fuel_capacity}",
                    CarsInfo.check_drive(car))
 
@@ -79,6 +79,6 @@ class Dealership:
         sorted_cars = sorted(self.cars, key=lambda car: car.cost, reverse=reverse_sort)
 
         for car in sorted_cars:
-            yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+            yield (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
                    f"Fuel Capacity: {car.fuel_capacity}",
                    CarsInfo.check_drive(car))

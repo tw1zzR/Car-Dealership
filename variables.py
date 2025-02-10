@@ -1,10 +1,10 @@
 
-border = "----------------------------------"
+border = "------------------------------------"
 invalid_option = (f"\n{border}\n"
                    "(!) Invalid variation, please select between options.\n"
                   f"{border}")
 
-dealership_border = "----------CAR-DEALERSHIP----------"
+dealership_border = "-----------CAR-DEALERSHIP-----------"
 
 welcome = "Welcome at car dealership!"
 
