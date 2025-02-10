@@ -152,8 +152,9 @@ try:
 
                                 print(f"\n{border}")
                                 for car in tuple_of_sorted_cars:
-                                    print(car)
-                                print(border)
+                                    for car_stats in car:
+                                        print(f"{car_stats}")
+                                    print(border)
 
                         case "6":
 

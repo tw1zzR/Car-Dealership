@@ -79,4 +79,6 @@ class Dealership:
         sorted_cars = sorted(self.cars, key=lambda car: car.cost, reverse=reverse_sort)
 
         for car in sorted_cars:
-            yield f"{car.cost}$ | {car.make} {car.model} {car.year}"
+            yield (f"{car.cost}$ | {car.make} {car.model} {car.year}",
+                   f"Fuel Capacity: {car.fuel_capacity}",
+                   CarsInfo.check_drive(car))
