@@ -17,15 +17,11 @@ class Dealership:
             Crossover("HONDA", "CR-V", 2022, 57, 51050, True, True),
             Sportcar("HONDA", "NSX", 2015, 59, 34600, False, True),
             Pickup("HONDA", "RIDGELINE", 2024, 73, 31900, True, False)]
-    brands = []
+
+    brands = sorted(set(car.make for car in cars), key=lambda car: len(car))
 
     def __init__(self):
         self.dealership_name = "9LPUK-XY9LPUK"
-
-        # Brands appending
-        for car in self.cars:
-            if car.make not in self.brands:
-                self.brands.append(car.make)
 
     # Dealership abilities
     def find_car_make(self, brand):

@@ -6,6 +6,10 @@ from Entities.CarsInfo import CarsInfo
 
 dealership = Dealership()
 
+# cars_info = CarsInfo()
+#
+# print(cars_info.show_car_info())
+
 try:
     print(dealership_border)
     print(welcome)
@@ -117,7 +121,8 @@ try:
                                             continue
 
                                         for car in model_cars:
-                                            tuple_of_car_stats = CarsInfo.show_car_info(car)
+                                            carsinfo = CarsInfo(car)
+                                            tuple_of_car_stats = carsinfo.show_car_info()
 
                                             for car_stats in tuple_of_car_stats:
                                                 print(f"{car_stats}")
