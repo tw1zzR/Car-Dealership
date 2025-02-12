@@ -11,7 +11,7 @@ class CarsInfo():
         elif self.car.rear_wheel and not self.car.front_wheel:
             return f"Rear-Drive: {self.car.rear_wheel}"
 
-    def show_car_info(self):
+    def get_car_info_as_string(self):
         return (f"{self.car.cost}$ | {self.car.make} {self.car.model} {self.car.year} [{self.car.type}]",
                f"Fuel Capacity: {self.car.fuel_capacity}",
                CarsInfo.check_drive(self))

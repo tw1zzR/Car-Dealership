@@ -27,27 +27,27 @@ class Dealership:
     def find_car_make(self, brand):
         for car in self.cars:
             if car.make == brand:
-                yield CarsInfo.show_car_info(car)
+                yield CarsInfo.get_car_info_as_string(car)
 
     def find_car_type(self, type):
         class_type = globals()[type]
 
         for car in self.cars:
             if isinstance(car, class_type):
-                yield CarsInfo.show_car_info(car)
+                yield CarsInfo.get_car_info_as_string(car)
 
     def find_car_model(self, model):
         for car in self.cars:
             if model == car.model:
                 yield car
 
-    def all_stock_cars(self):
+    def show_all_stock_cars(self):
         for car in self.cars:
             print(border)
-            yield CarsInfo.show_car_info(car)
+            yield CarsInfo.get_car_info_as_string(car)
 
     def sort_price(self, reverse_sort=False):
         sorted_cars = sorted(self.cars, key=lambda car: car.cost, reverse=reverse_sort)
 
         for car in sorted_cars:
-            yield CarsInfo.show_car_info(car)
+            yield CarsInfo.get_car_info_as_string(car)
