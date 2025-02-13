@@ -1,8 +1,6 @@
 from Entities.Car.Crossovers import Crossover
 from Entities.Car.Sportcars import Sportcar
 from Entities.Car.Pickups import Pickup
-from Entities.CarsInfo import CarsInfo
-from variables import border
 
 
 class Dealership:

@@ -1,8 +1,7 @@
 from variables import *
 from menu_variables import *
-from methods import GoodByeClient, display_list_of_cars
+from methods import say_goodbye_and_exit, display_list_of_cars
 from Entities.Dealership import Dealership
-from Entities.CarsInfo import CarsInfo
 
 dealership = Dealership()
 
@@ -15,7 +14,7 @@ try:
 
         match selection:
             case "Q":
-                GoodByeClient()
+                say_goodbye_and_exit()
 
             case "1":
 
@@ -24,7 +23,7 @@ try:
 
                     match selection:
                         case "Q":
-                            GoodByeClient()
+                            say_goodbye_and_exit()
                         case "B":
                             break
                         case "1":
@@ -42,7 +41,7 @@ try:
 
                                 match option:
                                     case "Q":
-                                        GoodByeClient()
+                                        say_goodbye_and_exit()
                                     case "B":
                                         break
                                     case "1" | "BMW":
@@ -67,7 +66,7 @@ try:
 
                                 match option:
                                     case "Q":
-                                        GoodByeClient()
+                                        say_goodbye_and_exit()
                                     case "B":
                                         break
                                     case "1" | "CROSSOVER":
@@ -93,7 +92,7 @@ try:
 
                                 match model_option:
                                     case "Q":
-                                        GoodByeClient()
+                                        say_goodbye_and_exit()
                                     case "B":
                                         break
                                     case _:
@@ -110,7 +109,7 @@ try:
                         case "4":
                             list_of_cars = list(dealership.show_all_stock_cars())
 
-                            print(f"\n{border}")
+                            print()
                             display_list_of_cars(list_of_cars)
 
                         case "5":
@@ -120,7 +119,7 @@ try:
 
                                 match option:
                                     case "Q":
-                                        GoodByeClient()
+                                        say_goodbye_and_exit()
                                     case "B":
                                         break
                                     case "1":
@@ -133,7 +132,7 @@ try:
 
                                 list_of_cars = list(dealership.sort_price(reverse_sort=descending_order))
 
-                                print(f"\n{border}")
+                                print()
                                 display_list_of_cars(list_of_cars)
 
                         case "6":
@@ -143,7 +142,7 @@ try:
 
                                 match option:
                                     case "Q":
-                                        GoodByeClient()
+                                        say_goodbye_and_exit()
                                     case "B":
                                         break
                                     case "1":

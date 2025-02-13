@@ -1,4 +1,4 @@
-class CarsInfo():
+class CarInfo():
 
     def __init__(self, car):
         self.car = car
@@ -14,10 +14,9 @@ class CarsInfo():
     def get_car_info_as_string(self):
         return (f"{self.car.cost}$ | {self.car.make} {self.car.model} {self.car.year} [{self.car.type}]",
                f"Fuel Capacity: {self.car.fuel_capacity}",
-               CarsInfo.check_drive(self))
+               CarInfo.check_drive(self))
 
 
-#
 # class CarsInfo():
 #
 #     @classmethod

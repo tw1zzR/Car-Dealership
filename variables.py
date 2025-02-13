@@ -1,5 +1,5 @@
 
-border = "------------------------------------"
+border = "----------------------------------------"
 invalid_option = (f"\n{border}\n"
                    "(!) Invalid variation, please select between options.\n"
                   f"{border}")

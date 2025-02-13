@@ -1,14 +1,14 @@
-from Entities.CarsInfo import CarsInfo
+from Entities.CarInfo import CarInfo
 from variables import border
 
 
-def GoodByeClient():
+def say_goodbye_and_exit():
     print("\nHave a nice day! Good bye!")
     exit()
 
 def display_list_of_cars(list_of_cars):
     for car in list_of_cars:
-        object_carinfo = CarsInfo(car)
+        object_carinfo = CarInfo(car)
         car_stats = object_carinfo.get_car_info_as_string()
 
         print(border)
