@@ -34,7 +34,7 @@ class Dealership:
 
         for car in self.cars:
             if isinstance(car, class_type):
-                yield CarsInfo.get_car_info_as_string(car)
+                yield car
 
     def find_car_model(self, model):
         for car in self.cars:
@@ -44,10 +44,10 @@ class Dealership:
     def show_all_stock_cars(self):
         for car in self.cars:
             print(border)
-            yield CarsInfo.get_car_info_as_string(car)
+            yield car
 
     def sort_price(self, reverse_sort=False):
         sorted_cars = sorted(self.cars, key=lambda car: car.cost, reverse=reverse_sort)
 
         for car in sorted_cars:
-            yield CarsInfo.get_car_info_as_string(car)
+            yield car

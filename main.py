@@ -6,10 +6,6 @@ from Entities.CarsInfo import CarsInfo
 
 dealership = Dealership()
 
-# cars_info = CarsInfo()
-#
-# print(cars_info.show_car_info())
-
 try:
     print(dealership_border)
     print(welcome)
@@ -59,8 +55,8 @@ try:
                                         print(invalid_option)
                                         continue
 
-                                # Display cars
                                 print()
+                                # Display cars
                                 for car in tuple_brand_cars:
                                     object_carinfo = CarsInfo(car)
                                     car_stats = object_carinfo.get_car_info_as_string()
@@ -93,13 +89,15 @@ try:
                                         print(invalid_option)
                                         continue
 
-                                # Display cars
                                 print()
+                                # Display cars
                                 for car in tuple_type_cars:
-                                    print(border)
+                                    object_carinfo = CarsInfo(car)
+                                    car_stats = object_carinfo.get_car_info_as_string()
 
-                                    for car_stats in car:
-                                        print(f"{car_stats}")
+                                    print(border)
+                                    for stat in car_stats:
+                                        print(stat)
                                 print(border)
 
                         case "3":
@@ -122,22 +120,26 @@ try:
                                             print(border)
                                             continue
 
+                                        # Display cars
                                         for car in model_cars:
-                                            carsinfo = CarsInfo(car)
-                                            tuple_of_car_stats = carsinfo.show_car_info()
+                                            object_carinfo = CarsInfo(car)
+                                            car_stats = object_carinfo.get_car_info_as_string()
 
-                                            for car_stats in tuple_of_car_stats:
-                                                print(f"{car_stats}")
+                                            for stat in car_stats:
+                                                print(stat)
                                             print(border)
 
                         case "4":
-                            tuple_of_stock_cars = dealership.all_stock_cars()
+                            tuple_of_stock_cars = dealership.show_all_stock_cars()
 
                             print()
                             # Display cars
                             for car in tuple_of_stock_cars:
-                                for car_stats in car:
-                                    print(f"{car_stats}")
+                                object_carinfo = CarsInfo(car)
+                                car_stats = object_carinfo.get_car_info_as_string()
+
+                                for stat in car_stats:
+                                    print(stat)
                             print(border)
 
                         case "5":
@@ -159,9 +161,12 @@ try:
                                         continue
 
                                 print(f"\n{border}")
+                                # Display cars
                                 for car in tuple_of_sorted_cars:
-                                    for car_stats in car:
-                                        print(f"{car_stats}")
+                                    object_carinfo = CarsInfo(car)
+                                    car_stats = object_carinfo.get_car_info_as_string()
+                                    for stat in car_stats:
+                                        print(stat)
                                     print(border)
 
                         case "6":
