@@ -43,7 +43,6 @@ class Dealership:
 
     def show_all_stock_cars(self):
         for car in self.cars:
-            print(border)
             yield car
 
     def sort_price(self, reverse_sort=False):

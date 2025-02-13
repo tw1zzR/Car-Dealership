@@ -1,6 +1,6 @@
 from variables import *
 from menu_variables import *
-from methods import GoodByeClient
+from methods import GoodByeClient, display_cars
 from Entities.Dealership import Dealership
 from Entities.CarsInfo import CarsInfo
 
@@ -46,25 +46,28 @@ try:
                                     case "B":
                                         break
                                     case "1" | "BMW":
-                                        tuple_brand_cars = dealership.find_car_make("BMW")
+                                        kind_of_car = "BMW"
                                     case "2" | "AUDI":
-                                        tuple_brand_cars = dealership.find_car_make("AUDI")
+                                        kind_of_car = "AUDI"
                                     case "3" | "HONDA":
-                                        tuple_brand_cars = dealership.find_car_make("HONDA")
+                                        kind_of_car = "HONDA"
                                     case _:
                                         print(invalid_option)
                                         continue
 
+                                list_of_cars = list(dealership.find_car_make(kind_of_car))
+
                                 print()
                                 # Display cars
-                                for car in tuple_brand_cars:
-                                    object_carinfo = CarsInfo(car)
-                                    car_stats = object_carinfo.get_car_info_as_string()
-
-                                    print(border)
-                                    for stat in car_stats:
-                                        print(stat)
-                                print(border)
+                                display_cars(list_of_cars)
+                                # for car in list_of_cars:
+                                #     object_carinfo = CarsInfo(car)
+                                #     car_stats = object_carinfo.get_car_info_as_string()
+                                #
+                                #     print(border)
+                                #     for stat in car_stats:
+                                #         print(stat)
+                                # print(border)
 
                         case "2":
 
@@ -78,20 +81,19 @@ try:
                                         break
                                     case "1" | "CROSSOVER":
                                         kind_of_car = "Crossover"
-                                        tuple_type_cars = dealership.find_car_type(kind_of_car)
                                     case "2" | "SPORTCAR":
                                         kind_of_car = "Sportcar"
-                                        tuple_type_cars = dealership.find_car_type(kind_of_car)
                                     case "3" | "PICKUP":
                                         kind_of_car = "Pickup"
-                                        tuple_type_cars = dealership.find_car_type(kind_of_car)
                                     case _:
                                         print(invalid_option)
                                         continue
 
+                                list_type_cars = list(dealership.find_car_type(kind_of_car))
+
                                 print()
                                 # Display cars
-                                for car in tuple_type_cars:
+                                for car in list_type_cars:
                                     object_carinfo = CarsInfo(car)
                                     car_stats = object_carinfo.get_car_info_as_string()
 
@@ -112,16 +114,16 @@ try:
                                     case "B":
                                         break
                                     case _:
-                                        model_cars = list(dealership.find_car_model(model_option))
+                                        list_model_cars = list(dealership.find_car_model(model_option))
 
                                         print(border)
-                                        if not model_cars:
+                                        if not list_model_cars:
                                             print(f"(!) Car model '{model_option}' is not in stock.")
                                             print(border)
                                             continue
 
                                         # Display cars
-                                        for car in model_cars:
+                                        for car in list_model_cars:
                                             object_carinfo = CarsInfo(car)
                                             car_stats = object_carinfo.get_car_info_as_string()
 
@@ -130,17 +132,17 @@ try:
                                             print(border)
 
                         case "4":
-                            tuple_of_stock_cars = dealership.show_all_stock_cars()
+                            list_of_stock_cars = list(dealership.show_all_stock_cars())
 
-                            print()
+                            print(f"\n{border}")
                             # Display cars
-                            for car in tuple_of_stock_cars:
+                            for car in list_of_stock_cars:
                                 object_carinfo = CarsInfo(car)
                                 car_stats = object_carinfo.get_car_info_as_string()
 
                                 for stat in car_stats:
                                     print(stat)
-                            print(border)
+                                print(border)
 
                         case "5":
 
@@ -153,18 +155,21 @@ try:
                                     case "B":
                                         break
                                     case "1":
-                                        tuple_of_sorted_cars = dealership.sort_price()
+                                        descending_order = False
                                     case "2":
-                                        tuple_of_sorted_cars = dealership.sort_price(reverse_sort=True)
+                                        descending_order = True
                                     case _:
                                         print(invalid_option)
                                         continue
 
+                                list_of_sorted_cars = list(dealership.sort_price(reverse_sort=descending_order))
+
                                 print(f"\n{border}")
                                 # Display cars
-                                for car in tuple_of_sorted_cars:
+                                for car in list_of_sorted_cars:
                                     object_carinfo = CarsInfo(car)
                                     car_stats = object_carinfo.get_car_info_as_string()
+
                                     for stat in car_stats:
                                         print(stat)
                                     print(border)
