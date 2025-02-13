@@ -1,6 +1,6 @@
 from variables import *
 from menu_variables import *
-from methods import GoodByeClient, display_cars
+from methods import GoodByeClient, display_list_of_cars
 from Entities.Dealership import Dealership
 from Entities.CarsInfo import CarsInfo
 
@@ -58,16 +58,7 @@ try:
                                 list_of_cars = list(dealership.find_car_make(kind_of_car))
 
                                 print()
-                                # Display cars
-                                display_cars(list_of_cars)
-                                # for car in list_of_cars:
-                                #     object_carinfo = CarsInfo(car)
-                                #     car_stats = object_carinfo.get_car_info_as_string()
-                                #
-                                #     print(border)
-                                #     for stat in car_stats:
-                                #         print(stat)
-                                # print(border)
+                                display_list_of_cars(list_of_cars)
 
                         case "2":
 
@@ -89,18 +80,10 @@ try:
                                         print(invalid_option)
                                         continue
 
-                                list_type_cars = list(dealership.find_car_type(kind_of_car))
+                                list_of_cars = list(dealership.find_car_type(kind_of_car))
 
                                 print()
-                                # Display cars
-                                for car in list_type_cars:
-                                    object_carinfo = CarsInfo(car)
-                                    car_stats = object_carinfo.get_car_info_as_string()
-
-                                    print(border)
-                                    for stat in car_stats:
-                                        print(stat)
-                                print(border)
+                                display_list_of_cars(list_of_cars)
 
                         case "3":
 
@@ -114,35 +97,21 @@ try:
                                     case "B":
                                         break
                                     case _:
-                                        list_model_cars = list(dealership.find_car_model(model_option))
+                                        list_of_cars = list(dealership.find_car_model(model_option))
 
-                                        print(border)
-                                        if not list_model_cars:
+                                        if not list_of_cars:
+                                            print(border)
                                             print(f"(!) Car model '{model_option}' is not in stock.")
                                             print(border)
                                             continue
 
-                                        # Display cars
-                                        for car in list_model_cars:
-                                            object_carinfo = CarsInfo(car)
-                                            car_stats = object_carinfo.get_car_info_as_string()
-
-                                            for stat in car_stats:
-                                                print(stat)
-                                            print(border)
+                                        display_list_of_cars(list_of_cars)
 
                         case "4":
-                            list_of_stock_cars = list(dealership.show_all_stock_cars())
+                            list_of_cars = list(dealership.show_all_stock_cars())
 
                             print(f"\n{border}")
-                            # Display cars
-                            for car in list_of_stock_cars:
-                                object_carinfo = CarsInfo(car)
-                                car_stats = object_carinfo.get_car_info_as_string()
-
-                                for stat in car_stats:
-                                    print(stat)
-                                print(border)
+                            display_list_of_cars(list_of_cars)
 
                         case "5":
 
@@ -162,17 +131,10 @@ try:
                                         print(invalid_option)
                                         continue
 
-                                list_of_sorted_cars = list(dealership.sort_price(reverse_sort=descending_order))
+                                list_of_cars = list(dealership.sort_price(reverse_sort=descending_order))
 
                                 print(f"\n{border}")
-                                # Display cars
-                                for car in list_of_sorted_cars:
-                                    object_carinfo = CarsInfo(car)
-                                    car_stats = object_carinfo.get_car_info_as_string()
-
-                                    for stat in car_stats:
-                                        print(stat)
-                                    print(border)
+                                display_list_of_cars(list_of_cars)
 
                         case "6":
 
