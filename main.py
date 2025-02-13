@@ -62,10 +62,12 @@ try:
                                 # Display cars
                                 print()
                                 for car in tuple_brand_cars:
-                                    print(border)
+                                    object_carinfo = CarsInfo(car)
+                                    car_stats = object_carinfo.get_car_info_as_string()
 
-                                    for car_stats in car:
-                                        print(f"{car_stats}")
+                                    print(border)
+                                    for stat in car_stats:
+                                        print(stat)
                                 print(border)
 
                         case "2":

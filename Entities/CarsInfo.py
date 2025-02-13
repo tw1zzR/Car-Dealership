@@ -18,19 +18,19 @@ class CarsInfo():
 
 
 #
-class CarsInfo():
-
-    @classmethod
-    def check_drive(self, car):
-        if car.all_wheels:
-            return f"Complete-Drive: {car.all_wheels}"
-        elif car.front_wheel and not car.rear_wheel:
-            return f"Front-Drive: {car.front_wheel}"
-        elif car.rear_wheel and not car.front_wheel:
-            return f"Rear-Drive: {car.rear_wheel}"
-
-    @classmethod
-    def show_car_info(self, car):
-        return (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
-                f"Fuel Capacity: {self.car.fuel_capacity}",
-                CarsInfo.check_drive(car))
+# class CarsInfo():
+#
+#     @classmethod
+#     def check_drive(self, car):
+#         if car.all_wheels:
+#             return f"Complete-Drive: {car.all_wheels}"
+#         elif car.front_wheel and not car.rear_wheel:
+#             return f"Front-Drive: {car.front_wheel}"
+#         elif car.rear_wheel and not car.front_wheel:
+#             return f"Rear-Drive: {car.rear_wheel}"
+#
+#     @classmethod
+#     def show_car_info(self, car):
+#         return (f"{car.cost}$ | {car.make} {car.model} {car.year} [{car.type}]",
+#                 f"Fuel Capacity: {self.car.fuel_capacity}",
+#                 CarsInfo.check_drive(car))

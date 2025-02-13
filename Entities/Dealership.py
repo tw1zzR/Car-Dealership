@@ -27,7 +27,7 @@ class Dealership:
     def find_car_make(self, brand):
         for car in self.cars:
             if car.make == brand:
-                yield CarsInfo.get_car_info_as_string(car)
+                yield car
 
     def find_car_type(self, type):
         class_type = globals()[type]
