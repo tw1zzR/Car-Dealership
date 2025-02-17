@@ -1,12 +1,33 @@
 from variables import *
 from menu_variables import *
 from methods import say_goodbye_and_exit, display_list_of_cars
-from create_dealerships_with_cars import first_dealership_cars, second_dealership_cars, third_dealership_cars
-
-
+from create_dealerships_with_cars import first_dealership, second_dealership, third_dealership
 
 try:
-    print(dealership_border)
+    print(border)
+
+    while True:
+        user_dealership_option = input("Which dealership would you like to visit? [q to quit]\n"
+                                       f" 1. {first_dealership.dealership_name}\n"
+                                       f" 2. {second_dealership.dealership_name}\n"
+                                       f" 3. {third_dealership.dealership_name}\n"
+                                       "Select an option: ").upper()
+
+        match user_dealership_option:
+            case "Q":
+                say_goodbye_and_exit()
+            case "1":
+                dealership = first_dealership
+            case "2":
+                dealership = second_dealership
+            case "3":
+                dealership = third_dealership
+            case _:
+                print(f"{invalid_option}\n")
+                continue
+        break
+
+    print(f"\n{dealership_border}")
     print(welcome)
 
     while True:

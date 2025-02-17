@@ -1,7 +1,7 @@
 class Dealership:
 
-    def __init__(self, list_of_cars):
-        self.dealership_name = "9LPUK-XY9LPUK"
+    def __init__(self, dealership_name, list_of_cars):
+        self.dealership_name = dealership_name
         self.cars = list_of_cars
         self.brands = sorted(set(car.make for car in self.cars), key=lambda car: len(car))
 
