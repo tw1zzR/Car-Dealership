@@ -1,25 +1,9 @@
-from Entities.Car.Crossovers import Crossover
-from Entities.Car.Sportcars import Sportcar
-from Entities.Car.Pickups import Pickup
-
-
 class Dealership:
 
-    cars = [Crossover("BMW", "X5", 2019, 83, 56300, True, False),
-            Sportcar("BMW", "M4", 2018, 59, 55000, False, True),
-            Sportcar("BMW", "M4", 2016, 54, 52400, True, True),
-            Pickup("BMW", "X7", 2021, 88, 45750, True, True),
-            Crossover("AUDI", "Q7", 2020, 85, 60000, True, False),
-            Sportcar("AUDI", "R8", 2023, 73, 72500, True, True),
-            Pickup("AUDI", "ACTIVESPHERE", 2025, 0, 43200, False, True),
-            Crossover("HONDA", "CR-V", 2022, 57, 51050, True, True),
-            Sportcar("HONDA", "NSX", 2015, 59, 34600, False, True),
-            Pickup("HONDA", "RIDGELINE", 2024, 73, 31900, True, False)]
-
-    brands = sorted(set(car.make for car in cars), key=lambda car: len(car))
-
-    def __init__(self):
+    def __init__(self, list_of_cars):
         self.dealership_name = "9LPUK-XY9LPUK"
+        self.cars = list_of_cars
+        self.brands = sorted(set(car.make for car in self.cars), key=lambda car: len(car))
 
     # Dealership abilities
     def find_car_make(self, brand):

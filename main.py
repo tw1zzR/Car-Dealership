@@ -1,9 +1,9 @@
 from variables import *
 from menu_variables import *
 from methods import say_goodbye_and_exit, display_list_of_cars
-from Entities.Dealership import Dealership
+from create_dealerships_with_cars import first_dealership_cars, second_dealership_cars, third_dealership_cars
 
-dealership = Dealership()
+
 
 try:
     print(dealership_border)
