@@ -75,16 +75,17 @@ try:
                         case "2":
 
                             while True:
-                                option = input(choose_type_of_car_opt).upper()
+                                option = input(choose_type_of_car_opt).capitalize()
 
                                 match option:
                                     case "Q":
                                         say_goodbye_and_exit()
                                     case "B":
                                         break
-                                    case "CROSSOVER" | "SPORTCAR" | "PICKUP":
+                                    case "Crossover" | "Sportcar" | "Pickup":
                                         for car in selected_dealership.cars:
-                                            if option == car.type:
+                                            car_class_name = type(car).__name__
+                                            if option == car_class_name:
                                                 kind_of_car = type(car)
                                                 break
                                     case _:

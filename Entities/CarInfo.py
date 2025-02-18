@@ -12,7 +12,8 @@ class CarInfo():
             return f"Rear-Drive: {self.car.rear_wheel}"
 
     def get_car_info_as_string(self):
-        return (f"{self.car.cost}$ | {self.car.make} {self.car.model} {self.car.year} [{self.car.type}]",
+        car_class_name = type(self.car).__name__
+        return (f"{self.car.cost}$ | {self.car.make} {self.car.model} {self.car.year} [{car_class_name}]",
                f"Fuel Capacity: {self.car.fuel_capacity}",
                CarInfo.check_drive(self))
 
