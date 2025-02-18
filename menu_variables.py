@@ -1,11 +1,20 @@
+from Entities.Dealerships.FirstDealership.CreateFirstDealership import first_dealership
+from Entities.Dealerships.SecondDealership.CreateSecondDealership import second_dealership
+from Entities.Dealerships.ThirdDealership.CreateThirdDealership import third_dealership
 
 q_b_options = "[q to quit]  [b to back]"
 
-what_do_you_want_1 = ("\nWhat do you want? [q to quit]\n"
-           " 1. Buy a car\n"
-           " 2. Work schedule\n"
-           " 3. About us\n"
-           "Select your option: ")
+ask_which_dealership = ("Which dealership would you like to visit? [q to quit]\n"
+                                       f" 1. {first_dealership.dealership_name}\n"
+                                       f" 2. {second_dealership.dealership_name}\n"
+                                       f" 3. {third_dealership.dealership_name}\n"
+                                       "Select an option: ")
+
+what_do_you_want_1 =  ("\nWhat do you want? [q to quit]\n"
+                       " 1. Buy a car\n"
+                       " 2. Work schedule\n"
+                       " 3. About us\n"
+                       "Select your option: ")
 
 what_are_you_interested_in_2 = ("\nWhat are you interested in?\n"
                                       " [q to quit]   [b to back]\n"

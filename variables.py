@@ -1,19 +1,12 @@
 
 border = "----------------------------------------"
-invalid_option = (f"\n{border}\n"
-                   "(!) Invalid variation, please select between options.\n"
-                  f"{border}")
-
 dealership_border = "-----------CAR-DEALERSHIP-----------"
 
 welcome = "Welcome at car dealership!"
 
-work_time = "9:00 - 19:00"
-
-about_us = ("\nWelcome to 9LPUK-XY9LPUK car dealership,\n"
-            "your ultimate destination for premium crossovers,\n"
-            "high-performance sports cars, and powerful pickups.\n"
-            "We offer top brands, expert service, and the best deals to match your driving passion.")
+invalid_option = (f"\n{border}\n"
+                   "(!) Invalid variation, please select between options.\n"
+                  f"{border}")
 
 # TYPE CAR BENEFITS ↓
 crossover_benefits = (f"\n{border}\n"

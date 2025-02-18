@@ -2,28 +2,6 @@ from Entities.Car.Crossovers import Crossover
 from Entities.Car.Pickups import Pickup
 from Entities.Car.Sportcars import Sportcar
 
-first_dealership_cars = [Crossover("BMW", "X5", 2019, 83, 56300, True, False),
-                         Sportcar("BMW", "M4", 2018, 59, 55000, False, True),
-                         Sportcar("BMW", "M4", 2016, 54, 52400, True, True),
-                         Pickup("BMW", "X7", 2021, 88, 45750, True, True),
-                         Crossover("AUDI", "Q7", 2020, 85, 60000, True, False),
-                         Sportcar("AUDI", "R8", 2023, 73, 72500, True, True),
-                         Pickup("AUDI", "ACTIVESPHERE", 2025, 0, 43200, False, True),
-                         Crossover("HONDA", "CR-V", 2022, 57, 51050, True, True),
-                         Sportcar("HONDA", "NSX", 2015, 59, 34600, False, True),
-                         Pickup("HONDA", "RIDGELINE", 2024, 73, 31900, True, False)]
-
-second_dealership_cars = [Crossover("BMW", "X5", 2020, 83, 59250, True, False),
-                         Sportcar("BMW", "M4", 2016, 55, 52400, True, True),
-                         Pickup("BMW", "X7", 2022, 87, 48750, True, True),
-                         Crossover("AUDI", "Q7", 2019, 84, 58000, True, False),
-                         Sportcar("AUDI", "R8", 2023, 93, 80500, True, True),
-                         Pickup("AUDI", "ACTIVESPHERE", 2024, 0, 40200, False, True),
-                         Crossover("HONDA", "CR-V", 2022, 57, 51550, True, True),
-                         Sportcar("HONDA", "NSX", 2013, 62, 31600, False, True),
-                         Pickup("HONDA", "RIDGELINE", 2025, 73, 36900, True, False),
-                         Pickup("MERCEDES-BENZ", "X-CLASS", 2017, 81, 66500, True, True)]
-
 third_dealership_cars = [Pickup("BMW", "X7", 2020, 88, 47000, True, True),
                          Sportcar("BMW", "M4", 2019, 59, 56500, False, True),
                          Sportcar("BMW", "M4", 2017, 54, 51000, True, True),
@@ -48,3 +26,12 @@ third_dealership_cars = [Pickup("BMW", "X7", 2020, 88, 47000, True, True),
                          Sportcar("MERCEDES", "SL 63 AMG", 2019, 28, 112000, True, True),
                          Sportcar("MERCEDES", "C63 AMG", 2021, 7, 96000, True, True),
                          Crossover("MERCEDES", "GLE", 2022, 10, 74000, True, False)]
+
+dealership_name = "CarZone"
+
+work_time = "10:00 - 19:00"
+
+about_us = (f"\nWelcome to {dealership_name}, where performance meets elegance.\n"
+             "Explore our handpicked collection of top-tier crossovers,\n"
+             "thrilling sports cars, and tough pickups.\n"
+             "Exceptional quality, personalized service, and the best deals await you!")

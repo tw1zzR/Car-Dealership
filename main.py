@@ -1,27 +1,26 @@
 from variables import *
 from menu_variables import *
 from methods import say_goodbye_and_exit, display_list_of_cars
-from create_dealerships_with_cars import first_dealership, second_dealership, third_dealership
+from Entities.Dealerships.FirstDealership.CreateFirstDealership import first_dealership
+from Entities.Dealerships.SecondDealership.CreateSecondDealership import second_dealership
+from Entities.Dealerships.ThirdDealership.CreateThirdDealership import third_dealership
+
 
 try:
     print(border)
 
     while True:
-        user_dealership_option = input("Which dealership would you like to visit? [q to quit]\n"
-                                       f" 1. {first_dealership.dealership_name}\n"
-                                       f" 2. {second_dealership.dealership_name}\n"
-                                       f" 3. {third_dealership.dealership_name}\n"
-                                       "Select an option: ").upper()
+        user_dealership_option = input(ask_which_dealership).upper()
 
         match user_dealership_option:
             case "Q":
                 say_goodbye_and_exit()
             case "1":
-                dealership = first_dealership
+                selected_dealership = first_dealership
             case "2":
-                dealership = second_dealership
+                selected_dealership = second_dealership
             case "3":
-                dealership = third_dealership
+                selected_dealership = third_dealership
             case _:
                 print(f"{invalid_option}\n")
                 continue
@@ -36,7 +35,6 @@ try:
         match selection:
             case "Q":
                 say_goodbye_and_exit()
-
             case "1":
 
                 while True:
@@ -54,7 +52,7 @@ try:
                                       f"{q_b_options}")
 
                                 i = 1
-                                for car in dealership.brands:
+                                for car in selected_dealership.brands:
                                     print(f" {i}. {car}")
                                     i += 1
 
@@ -75,7 +73,7 @@ try:
                                         print(invalid_option)
                                         continue
 
-                                list_of_cars = list(dealership.find_car_make(kind_of_car))
+                                list_of_cars = list(selected_dealership.find_car_make(kind_of_car))
 
                                 print()
                                 display_list_of_cars(list_of_cars)
@@ -100,7 +98,7 @@ try:
                                         print(invalid_option)
                                         continue
 
-                                list_of_cars = list(dealership.find_car_type(kind_of_car))
+                                list_of_cars = list(selected_dealership.find_car_type(kind_of_car))
 
                                 print()
                                 display_list_of_cars(list_of_cars)
@@ -117,7 +115,7 @@ try:
                                     case "B":
                                         break
                                     case _:
-                                        list_of_cars = list(dealership.find_car_model(model_option))
+                                        list_of_cars = list(selected_dealership.find_car_model(model_option))
 
                                         if not list_of_cars:
                                             print(border)
@@ -128,7 +126,7 @@ try:
                                         display_list_of_cars(list_of_cars)
 
                         case "4":
-                            list_of_cars = list(dealership.show_all_stock_cars())
+                            list_of_cars = list(selected_dealership.show_all_stock_cars())
 
                             print()
                             display_list_of_cars(list_of_cars)
@@ -151,7 +149,7 @@ try:
                                         print(invalid_option)
                                         continue
 
-                                list_of_cars = list(dealership.sort_price(reverse_sort=descending_order))
+                                list_of_cars = list(selected_dealership.sort_price(reverse_sort=descending_order))
 
                                 print()
                                 display_list_of_cars(list_of_cars)
@@ -178,9 +176,9 @@ try:
                             print(invalid_option)
 
             case "2":
-                print(f"\nDealership works at: {work_time}")
+                print(f"\nDealership works at: {selected_dealership.work_time}")
             case "3":
-                print(about_us)
+                print(selected_dealership.about_us)
             case _:
                 print(invalid_option)
 
