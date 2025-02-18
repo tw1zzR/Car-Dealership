@@ -123,7 +123,6 @@ try:
 
                             print()
                             display_list_of_cars(list_of_cars)
-
                             show_car_types_count(list_of_cars)
 
                         case "5":
