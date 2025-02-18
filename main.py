@@ -1,6 +1,6 @@
 from variables import *
 from menu_variables import *
-from methods import say_goodbye_and_exit, display_list_of_cars
+from methods import say_goodbye_and_exit, display_list_of_cars, show_car_types_count
 from Entities.Dealerships.FirstDealership.CreateFirstDealership import first_dealership
 from Entities.Dealerships.SecondDealership.CreateSecondDealership import second_dealership
 from Entities.Dealerships.ThirdDealership.CreateThirdDealership import third_dealership
@@ -119,28 +119,12 @@ try:
                                         display_list_of_cars(list_of_cars)
 
                         case "4":
-                            crossover_count = 0
-                            sportcar_count = 0
-                            pickup_count = 0
-
                             list_of_cars = list(selected_dealership.show_all_stock_cars())
 
                             print()
                             display_list_of_cars(list_of_cars)
 
-                            for car in list_of_cars:
-                                if isinstance(car, Crossover):
-                                    crossover_count += 1
-                                elif isinstance(car, Sportcar):
-                                    sportcar_count += 1
-                                elif isinstance(car, Pickup):
-                                    pickup_count += 1
-
-                            print(f"→ Available {len(list_of_cars)} cars:\n"
-                                  f"→ {crossover_count} Crossovers. "
-                                  f"{sportcar_count} Sportcars. "
-                                  f"{pickup_count} Pickups.")
-                            print(border)
+                            show_car_types_count(list_of_cars)
 
                         case "5":
 
