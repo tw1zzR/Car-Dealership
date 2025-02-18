@@ -6,6 +6,7 @@ def say_goodbye_and_exit():
     print("\nHave a nice day! Good bye!")
     exit()
 
+
 def display_list_of_cars(list_of_cars):
     for car in list_of_cars:
         object_carinfo = CarInfo(car)
@@ -15,6 +16,7 @@ def display_list_of_cars(list_of_cars):
         for stat in car_stats:
             print(stat)
     print(border)
+
 
 def show_car_types_count(list_of_cars):
     all_cars = len(list_of_cars)

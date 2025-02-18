@@ -7,7 +7,6 @@ class Dealership:
         self.cars = list_of_cars
         self.brands = sorted(set(car.make for car in self.cars), key=lambda car: len(car))
 
-    # Dealership abilities
     def find_car_make(self, brand):
         for car in self.cars:
             if car.make == brand:

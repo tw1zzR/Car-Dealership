@@ -18,7 +18,7 @@ class CarInfo():
                CarInfo.check_drive(self))
 
 
-# class CarsInfo():
+# class CarInfo():
 #
 #     @classmethod
 #     def check_drive(self, car):

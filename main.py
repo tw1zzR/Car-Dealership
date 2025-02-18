@@ -4,9 +4,6 @@ from methods import say_goodbye_and_exit, display_list_of_cars, show_car_types_c
 from Entities.Dealerships.FirstDealership.CreateFirstDealership import first_dealership
 from Entities.Dealerships.SecondDealership.CreateSecondDealership import second_dealership
 from Entities.Dealerships.ThirdDealership.CreateThirdDealership import third_dealership
-from Entities.Car.Crossovers import Crossover
-from Entities.Car.Sportcars import Sportcar
-from Entities.Car.Pickups import Pickup
 
 
 try:

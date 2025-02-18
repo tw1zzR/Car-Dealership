@@ -8,7 +8,6 @@ invalid_option = (f"\n{border}\n"
                    "(!) Invalid variation, please select between options.\n"
                   f"{border}")
 
-# TYPE CAR BENEFITS ↓
 crossover_benefits = (f"\n{border}\n"
                       "🚙 SUV (Crossover):\n"
                       "✅ Spacious interior & cargo room\n"
