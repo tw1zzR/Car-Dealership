@@ -56,22 +56,13 @@ try:
                                     print(f" {i}. {car}")
                                     i += 1
 
-                                option = input("Select car make: ").upper()
+                                option = input("Enter car make: ").upper()
 
-                                match option:
-                                    case "Q":
-                                        say_goodbye_and_exit()
-                                    case "B":
-                                        break
-                                    case "1" | "BMW":
-                                        kind_of_car = "BMW"
-                                    case "2" | "AUDI":
-                                        kind_of_car = "AUDI"
-                                    case "3" | "HONDA":
-                                        kind_of_car = "HONDA"
-                                    case _:
-                                        print(invalid_option)
-                                        continue
+                                if option in selected_dealership.brands:
+                                    kind_of_car = option
+                                else:
+                                    print(invalid_option)
+                                    continue
 
                                 list_of_cars = list(selected_dealership.find_car_make(kind_of_car))
 

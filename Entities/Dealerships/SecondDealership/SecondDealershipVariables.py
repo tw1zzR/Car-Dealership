@@ -11,7 +11,7 @@ second_dealership_cars = [Crossover("BMW", "X5", 2020, 83, 59250, True, False),
                          Crossover("HONDA", "CR-V", 2022, 57, 51550, True, True),
                          Sportcar("HONDA", "NSX", 2013, 62, 31600, False, True),
                          Pickup("HONDA", "RIDGELINE", 2025, 73, 36900, True, False),
-                         Pickup("MERCEDES-BENZ", "X-CLASS", 2017, 81, 66500, True, True)]
+                         Pickup("MERCEDES", "X-CLASS", 2017, 81, 66500, True, True)]
 
 dealership_name = "DriveWorld"
 
