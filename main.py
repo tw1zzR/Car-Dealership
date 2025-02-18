@@ -85,7 +85,7 @@ try:
                                     case "CROSSOVER" | "SPORTCAR" | "PICKUP":
                                         for car in selected_dealership.cars:
                                             if option == car.type:
-                                                kind_of_car = globals()[option.capitalize()]
+                                                kind_of_car = type(car)
                                                 break
                                     case _:
                                         print(invalid_option)
