@@ -4,6 +4,9 @@ from methods import say_goodbye_and_exit, display_list_of_cars
 from Entities.Dealerships.FirstDealership.CreateFirstDealership import first_dealership
 from Entities.Dealerships.SecondDealership.CreateSecondDealership import second_dealership
 from Entities.Dealerships.ThirdDealership.CreateThirdDealership import third_dealership
+from Entities.Car.Crossovers import Crossover
+from Entities.Car.Sportcars import Sportcar
+from Entities.Car.Pickups import Pickup
 
 
 try:
@@ -79,12 +82,11 @@ try:
                                         say_goodbye_and_exit()
                                     case "B":
                                         break
-                                    case "1" | "CROSSOVER":
-                                        kind_of_car = "Crossover"
-                                    case "2" | "SPORTCAR":
-                                        kind_of_car = "Sportcar"
-                                    case "3" | "PICKUP":
-                                        kind_of_car = "Pickup"
+                                    case "CROSSOVER" | "SPORTCAR" | "PICKUP":
+                                        for car in selected_dealership.cars:
+                                            if option == car.type:
+                                                kind_of_car = globals()[option.capitalize()]
+                                                break
                                     case _:
                                         print(invalid_option)
                                         continue

@@ -29,9 +29,9 @@ what_are_you_interested_in_2 = ("\nWhat are you interested in?\n"
 
 choose_type_of_car_opt = (f"\nChoose type of car:\n"
                           f"{q_b_options}\n"
-                          f" 1. Crossovers\n"
-                          f" 2. Sportcars\n"
-                          f" 3. Pickups\n"
+                          f" 1. Crossover\n"
+                          f" 2. Sportcar\n"
+                          f" 3. Pickup\n"
                           f"Select type: ")
 
 looking_for_car_model = ("\nWhat model are you looking for?\n"
